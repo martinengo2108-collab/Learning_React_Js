@@ -20,7 +20,12 @@ export default function progressBar({percent, goal , raised}){
             aria-valuemin={0}
             aria-valuemax={100}
             aria-label={`${clamped.toFixed(0)} percent of fundraising goal reached`}>
-
+              <div 
+              className="progress-guage__fill"
+              style={{left: `${clamped}%`}}>
+                <span className="progress-gauge__flag-amount">{raised.toLocaleString()}</span>
+                </div> 
+                
             </div>
         </div>
     )
