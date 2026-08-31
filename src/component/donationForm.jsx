@@ -19,7 +19,20 @@ export default function DonationForm({onAddDonation}){
             nextErrors.amount = "Enter an amount.";
         }
         else if(Number.isNaN(numericAmount)){
-            
+            nextErrors.amount = "Amount must be greater than 0.";
         }
+        return nextErrors;
+    }
+    function handleSubmit(event){
+        event.preventDefault();
+        const validationErrors = validate();
+        setErrors(validationErrors);
+
+        if (Object.keys(validationErrors).length >0){
+            setConfirmation("");
+            return;
+        }
+
+
     }
 }
