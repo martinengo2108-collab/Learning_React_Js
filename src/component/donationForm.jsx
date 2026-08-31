@@ -11,6 +11,14 @@ export default function DonationForm({onAddDonation}){
         if(!donor.trim()){
             nextErrors.donor = "Enter the donor's name ";
         } else if (donor.trim().length <2){
+            nextErrors.donor ="Name must be at least 2 characters.";
+
+        }
+        const numericAmount= Number(amount);
+        if(amount.trim() === ""){
+            nextErrors.amount = "Enter an amount.";
+        }
+        else if(Number.isNaN(numericAmount)){
             
         }
     }
