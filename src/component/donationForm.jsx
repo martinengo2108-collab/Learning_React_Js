@@ -53,6 +53,26 @@ export default function DonationForm({ onAddDonation }) {
                     placeholder="ex. Martine Boumkwo"
                     aria-invalid={Boolean(errors.donor)}
                     aria-describedby={errors.donor ? "donor-error" : undefined} />
+                {errors.donor && (
+                    <span className="field-error" id="donor-error">
+                        {error.donor}
+                    </span>
+                )}
+            </div>
+            <div className="form-field">
+                <label htmlFor="donation-amount">Amount (FCFA)</label>
+                <input
+                    id="donation-amount"
+                    type="number"
+                    inputMode="numeric"
+                    min="0"
+                    step="100"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    placeholder="e.g. 5000"
+                    aria-invalid={Boolean(errors.amount)}
+                    aria-describedby={errors.amount ? "amount-error" : undefined}
+                />
             </div>
         </form>
     )
