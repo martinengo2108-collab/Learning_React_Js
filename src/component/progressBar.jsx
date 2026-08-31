@@ -25,9 +25,17 @@ export default function progressBar({percent, goal , raised}){
               style={{left: `${clamped}%`}}>
                 <span className="progress-gauge__flag-amount">{raised.toLocaleString()}</span>
                 </div> 
-                
+                {ticks.map((tick) =>(
+                    <div 
+                    key={tick}
+                    className="progress-guage__tick"
+                    style={{left: `${tick}%`}}>
+                        <div className="progress-guage__tick-label">{tick}%</div>
+
+                    </div>
+                ))}
             </div>
         </div>
-    )
+    );
 
 }
