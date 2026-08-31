@@ -55,7 +55,7 @@ export default function DonationForm({ onAddDonation }) {
                     aria-describedby={errors.donor ? "donor-error" : undefined} />
                 {errors.donor && (
                     <span className="field-error" id="donor-error">
-                        {error.donor}
+                        {errors.donor}
                     </span>
                 )}
             </div>
@@ -69,12 +69,22 @@ export default function DonationForm({ onAddDonation }) {
                     step="100"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    placeholder="e.g. 5000"
+                    placeholder="ex 5000"
                     aria-invalid={Boolean(errors.amount)}
                     aria-describedby={errors.amount ? "amount-error" : undefined}
                 />
+                {errors.amount &&(
+                    <span className="field-error" id="amount-error">
+                        {errors.amount}
+                    </span>
+                )}
             </div>
+            <button type="submit" className="form-submit">Add donation</button>
+
+            {confirmation && <p className="form-confirmation">{confirmation}</p> }
+            
+            
         </form>
-    )
+    );
 
 }
