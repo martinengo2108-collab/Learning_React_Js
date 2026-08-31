@@ -6,5 +6,12 @@ export default function DonationForm({onAddDonation}){
     const [errors, setErrors] = useState({});
     const [confirmation, setConfirmation] = useState("");
 
-
+    function validate(){
+        const nextErrors= {};
+        if(!donor.trim()){
+            nextErrors.donor = "Enter the donor's name ";
+        } else if (donor.trim().length <2){
+            
+        }
+    }
 }
