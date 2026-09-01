@@ -34,6 +34,23 @@ export default function App(){
 
     useEffect(() => {
         localStorage.setItem(donations_keys, JSON.stringify(donations));
+    }, [donations]);
+
+    useEffect(() => {
+        localStorage.setItem(goal_key, String(goal));
+    }, [goal]);
+
+    function addDonations(donation) {
+        const nextId = donations.length > 0 ? Math.max(...donations.map((d) => d.id)) + 1 : 1;
+        const newDonation = { id: nextId 
+            donor :donation.donor,
+            amount: donation.amount,
+            date:new Date().toISOString().slice(0,10),
+
+        };
+        setDonations((prev) => [newDonation,...prev])
+    }   
+    function deleteDonation(id){
+        
     }
-    )}
 }
