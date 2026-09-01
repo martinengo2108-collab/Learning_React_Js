@@ -40,7 +40,7 @@ export default function App(){
         localStorage.setItem(goal_key, String(goal));
     }, [goal]);
 
-    function addDonations(donation) {
+    function addDonation(donation) {
         const nextId = donations.length > 0 ? Math.max(...donations.map((d) => d.id)) + 1 : 1;
         const newDonation = { id: nextId 
             donor :donation.donor,
@@ -51,6 +51,20 @@ export default function App(){
         setDonations((prev) => [newDonation,...prev])
     }   
     function deleteDonation(id){
-        
+        setDonations((prev)=> prev.filter((d)=> d.id !==id));
     }
+
+    return (
+        <div className="app-shell">
+            <header className="app-header">
+                <span className="app-eyebrow">TiC donation campaign </span>
+                <h1 className="app-title">Donation Tracker</h1>
+            </header>
+            <Dashboard donations={donations}
+            goal={goal}
+            onAddDonation={addDonation}
+            onUpdateGoal={UpdateGoal}
+            />
+        </div>
+    )
 }
