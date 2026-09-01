@@ -3,3 +3,76 @@
     padding:0;
     box-sizing :border-box;
 }
+
+.progress-gauge__goal-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.goal-edit-trigger {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.goal-edit-trigger:hover {
+  color: var(--primary-dark);
+}
+
+.goal-edit-form {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.goal-edit-form input {
+  width: 110px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.5rem;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.goal-edit-form input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+.goal-edit-save,
+.goal-edit-cancel {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.goal-edit-save {
+  background: var(--primary);
+  color: var(--paper);
+}
+
+.goal-edit-save:hover {
+  background: var(--primary-dark);
+}
+
+.goal-edit-cancel {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.goal-edit-error {
+  flex-basis: 100%;
+}
