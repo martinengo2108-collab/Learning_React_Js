@@ -43,7 +43,7 @@ export default function App() {
     function addDonation(donation) {
         const nextId = donations.length > 0 ? Math.max(...donations.map((d) => d.id)) + 1 : 1;
         const newDonation = {
-            id: nextId 
+            id: nextId ,
             donor: donation.donor,
             amount: donation.amount,
             date: new Date().toISOString().slice(0, 10),
