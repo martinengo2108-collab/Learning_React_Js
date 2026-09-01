@@ -1,5 +1,5 @@
-export default function donationItem({donation , onDelete}){
-    return(
+export default function donationItem({ donation, onDelete }) {
+    return (
         <li className="donation-item">
             <div className="donation-item__info">
                 <span className="donation-item__donor">{donation.donor}</span>
@@ -10,7 +10,14 @@ export default function donationItem({donation , onDelete}){
                 <span className="donation-item__amount">
                     {donation.amount.toLocaleString()} FCFA
                 </span>
+                <button
+                    type="button"
+                    className="donation-item__delete"
+                    onClick={() => onDelete(donation.id)}
+                    aria-label={`Delete donation from ${donation.donor}`}>
+                    Delete
+                </button>
             </div>
         </li>
-    )
+    );
 }
