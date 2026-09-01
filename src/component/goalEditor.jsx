@@ -29,8 +29,33 @@ export default function GoalEditor({ goal, onUpdateGoal }) {
             className="goal-edit__trigger" onClick={startEditing}>
                 Edit Goal
             </button>
-        )
+        );
     }
+    return(
+        <form className="goal-edit-form" onSubmit={handleSave}>
+            <input
+                type="number"
+                min="1"
+                step="100"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                aria-label="Edit goal amount"
+                autoFocus
+            />
+            <button type="submit" className="goal-edit-save">
+                Save
+            </button>
+            
+            <button
+                type="button"
+                className="goal-edit-cancel"
+                onClick={() => setIsEditing(false)}
+            >
+                Cancel
+            </button>
+            {error && <span className=" field-error goal-edit-error">{error}</span>}
+        </form>
+    )
 
 
 
