@@ -70,7 +70,7 @@ export default function App() {
                 goal={goal}
                 onAddDonation={addDonation}
                 onDeleteDonation={deleteDonation}
-                onUpdateGoal={updateGoal}
+                onUpdateGoal={upDateGoal}
             />
             <footer className="app-footer">
                 Built for the TiC internship program &middot; saved locally in

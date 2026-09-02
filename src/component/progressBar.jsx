@@ -1,4 +1,4 @@
-import goalEditor from "./goalEditor.jsx";
+import GoalEditor from "./goalEditor.jsx";
 
 export default function progressBar({ percent, goal, raised, onUpdateGoal }) {
 
@@ -18,20 +18,20 @@ export default function progressBar({ percent, goal, raised, onUpdateGoal }) {
                         Goal: {goal.toLocaleString()} FCFA
                     </span>
 
-                    <goalEditor goal={goal} onUpdateGoal={onUpdateGoal} />
+                    <GoalEditor goal={goal} onUpdateGoal={onUpdateGoal} />
                 </div>
 
             </div>
             <div
-                className="progress-guage__track"
+                className="progress-gauge__track"
                 role="progressbar"
                 aria-valuenow={Math.round(clamped)}
                 aria-valuemin={0}
                 aria-valuemax={100}
                 aria-label={`${raised.toLocaleString()} FCFA raised of ${goal.toLocaleString()} FCFA fundraising goal reached`}>
-                <div className="progress-gauge__fill" style={{ width: `${clamped}%` }}>
+                <div className="progress-gauge__fill" style={{ width: `${clamped}%` }}/>
                     <div
-                        className="progress-guage__flag"
+                        className="progress-gauge__flag"
                         style={{ left: `${clamped}%` }}>
                         <span className="progress-gauge__flag-amount">{raised.toLocaleString()}</span>
                     </div>
@@ -40,13 +40,13 @@ export default function progressBar({ percent, goal, raised, onUpdateGoal }) {
                         return (
                             <div
                                 key={tickPercent}
-                                className="progress-guage__tick"
+                                className="progress-gauge__tick"
                                 style={{ left: `${tickPercent}%` }}>
-                                <span className="progress-guage__tick-label">{tickAmount.toLocaleString()} FCFA</span>
+                                <span className="progress-gauge__tick-label">{tickAmount.toLocaleString()} FCFA</span>
                             </div>
                         );
                     })}
-                </div>
+                
             </div>
         </div>
     );
