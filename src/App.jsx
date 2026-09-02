@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import dashBoard from "./component/dashBoard.jsx";
+import DashBoard from "./component/dashBoard.jsx";
 
 const donations_keys = "TiC_donations";
 const default_goal = 100000;
@@ -51,8 +51,13 @@ export default function App() {
         };
         setDonations((prev) => [newDonation, ...prev])
     }
+
     function deleteDonation(id) {
         setDonations((prev) => prev.filter((d) => d.id !== id));
+    }
+
+    function upDateGoal(newGoal) {
+        setGoal(newGoal);
     }
 
     return (
@@ -61,10 +66,11 @@ export default function App() {
                 <span className="app-eyebrow">TiC donation campaign </span>
                 <h1 className="app-title">Donation Tracker</h1>
             </header>
-            <Dashboard donations={donations}
+            <DashBoard donations={donations}
                 goal={goal}
                 onAddDonation={addDonation}
-                onUpdateGoal={UpdateGoal}
+                onDeleteDonation={deleteDonation}
+                onUpdateGoal={updateGoal}
             />
             <footer className="app-footer">
                 Built for the TiC internship program &middot; saved locally in
