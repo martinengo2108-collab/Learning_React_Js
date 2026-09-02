@@ -8,31 +8,42 @@ import DonationList from "./donationList.jsx";
 
 export default function DashBoard({ donations
     , goal,
-     onAddDonation,
-      onUpdateGoal, onDeleteDonation
-     }) {
+    onAddDonation,
+    onUpdateGoal, onDeleteDonation
+}) {
     const totalRaised = donations.reduce((sum, d) => sum + d.amount, 0);
     const remaining = Math.max(goal - totalRaised, 0);
     const donorCount = donations.length;
-    const percentFunded =goal >0 ? Math.min((totalRaised / goal) * 100 ,100): 0;
+    const percentFunded = goal > 0 ? Math.min((totalRaised / goal) * 100, 100) : 0;
 
-    const topDonation = donations.length >0
-    ? donations.reduce((max, d) => (d.amount > max.amount ? d : max)) :null;
+    const topDonation = donations.length > 0
+        ? donations.reduce((max, d) => (d.amount > max.amount ? d : max)) : null;
 
     return (
         <main
-        className="dashboard">
+            className="dashboard">
 
             <section className="stat-grid"
-            aria-label="Campaign summary">
-               < TotalRaised amount={totalRaised} goal={goal} />
+                aria-label="Campaign summary">
+                < TotalRaised amount={totalRaised} goal={goal} />
 
-               <div className="stat-card">
-                <span className="stat-label">Remaining</span>
+                <div className="stat-card">
+                    <span className="stat-label">Remaining</span>
 
-                <span className="stat-value">{remaining <=0 ? "0" : remaining.toLocaleString()} FCFA</span>
-               </div>
+                    <span className="stat-value">{remaining <= 0 ? "0" : remaining.toLocaleString()} FCFA</span>
+                    <span className="stat-sublabel">{remaining <= 0 ? "Goal Reached" : "Remaining"}</span>
+                </div>
+
+                <DonorCount count={donorCount} />
             </section>
+
+            <section className="progress-section"
+            aria-label="Fundraising progress"> 
+                <ProgressBar percent={percentFunded}
+                goal={goal}
+                raised={totalRaised}
+                onUpdateGoal={onUpdateGoal}></ProgressBar>
+             </section>
         </main>
     )
 
