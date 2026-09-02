@@ -1,4 +1,4 @@
-import donationItem from "./donationItem.jsx"
+import DonationItem from "./donationItem.jsx"
 
 export default function donationList({donations ,onDeleteDonation}){
     return (
@@ -10,7 +10,7 @@ export default function donationList({donations ,onDeleteDonation}){
             ):(
                 <ul className="donation-list">
                     {donations.map((donation) =>(
-                        <donationItem 
+                        <DonationItem 
                         key ={donation.id}
                         donation={donation}
                         onDelete={onDeleteDonation}/>
