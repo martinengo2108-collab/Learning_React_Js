@@ -26,7 +26,7 @@ export default function GoalEditor({ goal, onUpdateGoal }) {
         return (
             <button 
             type="button"
-            className="goal-edit__trigger" onClick={startEditing}>
+            className="goal-edit-trigger" onClick={startEditing}>
                 Edit Goal
             </button>
         );
@@ -35,8 +35,8 @@ export default function GoalEditor({ goal, onUpdateGoal }) {
         <form className="goal-edit-form" onSubmit={handleSave}>
             <input
                 type="number"
-                min="1"
-                step="100"
+                min="0"
+                step="1"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
                 aria-label="Edit goal amount"
