@@ -1,15 +1,15 @@
 
 :root {
-  --navy: #37526d;         /* deep navy — text, headings, dark cards */
-  --royal: #2a4bd7;        /* royal blue — buttons, primary stat card */
-  --royal-dark: #16327a;   /* darker royal/navy — hover states */
-  --cobalt: #1d8fe1;       /* cobalt blue — progress fill, accents */
-  --sky: #9ad6f5;          /* sky blue — gradient partner, soft highlights */
-  --ice: #120f1a;          /* ice blue — page background */
-  --white: #ffffff;        /* card surfaces */
-  --line: #cfe3ef;         /* pale ice-blue border */
-  --brick: #c0392b;        /* red, kept only for the delete/danger action */
-  --muted: #5b7a99;        /* blue-grey — secondary text */
+  --navy: #7499be;         
+  --royal: #2a4bd7;      
+  --royal-dark: #16327a;  
+  --cobalt: #1d8fe1;      
+  --sky: #9ad6f5;          
+  --ice: #120f1a;          
+  --white: #ffffff;       
+  --line: #cfe3ef;         
+  --brick: #c0392b;        
+  --muted: #5b7a99;       
 
   --ink: var(--navy);
   --paper: var(--ice);
