@@ -44,8 +44,26 @@ export default function DashBoard({ donations
                 raised={totalRaised}
                 onUpdateGoal={onUpdateGoal}></ProgressBar>
              </section>
+             <section className="content-grid">
+                <div className="content-column">
+                    <DonationForm onAddDonation={onAddDonation} />
+
+                    {topDonation && (
+                        <div className="top-donor-card">
+                            <span className="top-donor-label">Top Donation</span>
+                            <span className="top-donor-name">{topDonation.name}</span>
+                            <span className="top-donor-amount">${topDonation.amount.toLocaleString()} FCFA</span>
+                        </div>
+                    )}
+                </div>
+                <div className="content-column">
+                    <DonationList
+                     donations={donations} 
+                     onDeleteDonation={onDeleteDonation} />
+                </div>
+             </section>
         </main>
-    )
+    );
 
 
 };
