@@ -73,8 +73,8 @@ export default function App() {
                 onUpdateGoal={upDateGoal}
             />
             <footer className="app-footer">
-                Built for the TiC internship program &middot; saved locally in
-                your browser, no backend connected yet
+
+                  &copy; {new Date().getFullYear()} Martine Ngo Boumkwo. All rights reserved.
             </footer>
         </div>
     )
