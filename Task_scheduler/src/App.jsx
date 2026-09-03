@@ -62,5 +62,20 @@ export default function App() {
     };
 
     const clearLogs =() => setLogs([]);
+    return (
+        <div className="min-h-screen
+        bg-slate-100
+        text-slate-100 font sans p-6 flex flex-col items-center justify-center">
+          <div  className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700/50 flex flex-col justify-between
+            min-h-[500px]">
+                <div>
+                    <h2></h2>
+                </div>
+            </div>
+          </div>
+
+        </div>
+    )
     
 };
