@@ -22,7 +22,16 @@ export default function App() {
         localStorage.setItem('tasks', JSON.stringify(tasks));
 
         const activeIntervals =[];
-        
+
+        tasks.forEach((task) =>{
+            if(task.status ==="active"){
+                const timerId = setInterval(() =>{
+                    addLog(task.name.toUppercase(),`Worker loop triggered every ${task.delay}s`, "task")
+                }, task.delay * 1000);
+                activeIntervals.push(timerId);
+            }
+        })
+
 
     }, [tasks]);
 
