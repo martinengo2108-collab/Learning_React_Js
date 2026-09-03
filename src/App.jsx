@@ -15,6 +15,15 @@ export default function App() {
     const addLog =(sender,message,type ='info') =>{
 
         const timeStamp = new Date().toLocaleTimeString();
-    }
-   
+        setLogs(prev => [...prev, {sender,message,type,timeStamp}]);
+    };
+
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+
+        const activeIntervals =[];
+        
+
+    }, [tasks]);
+
 };
