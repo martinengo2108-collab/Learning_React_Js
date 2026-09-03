@@ -49,4 +49,18 @@ export default function App() {
         addLog("SYSTEM", `Task : "${name}" `, "success");
 
     };
+
+    const toogleTaskStatus =(id,name,currentStatus) => {
+        const nextStatus = currentStatus === "active" ? "paused" : "active";
+        setTasks(tasks.map(task => task.id === id ? { ...task, status: nextStatus } : task));
+
+        if(nextStatus === "paused") {
+            addLog("SYSTEM", `Task : "${name}" is now paused`, "warning");
+        } else {
+            addLog("SYSTEM", `Task : "${name}" is now active`, "success");
+        }
+    };
+
+    const clearLogs =() => setLogs([]);
+    
 };
