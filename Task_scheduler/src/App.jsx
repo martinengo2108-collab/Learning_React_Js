@@ -30,9 +30,23 @@ export default function App() {
                 }, task.delay * 1000);
                 activeIntervals.push(timerId);
             }
-        })
+        });
+        return ()=>{
+            activeIntervals.forEach((id) => clearInterval(id));
+        };
 
 
     }, [tasks]);
 
+    const handleAddTask =(name,delay)    =>{
+        const newtask ={
+            id: Date.now(),
+            name,delay,
+            status:"active"
+        };
+
+        setTasks([...tasks,newtask]);
+        addLog("SYSTEM", `Task "${name}" added with a delay of ${delay}s`, "info");
+
+}
 };
