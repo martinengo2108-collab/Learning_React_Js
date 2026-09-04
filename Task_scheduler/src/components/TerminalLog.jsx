@@ -46,11 +46,18 @@ export default function TerminalLog({logs,onClear}){
                             className="leading-relaxed border-b border-slate-900/50 pb-1.5 last:border-0">
                                 <span
                                 className="text-slate-500 mr-2">[{log.timesstamp}]</span>
-                                
+                                <span className={`px-1.5 py-0.5 rounded text-[10px] uppercase font-boldd tracking-wide mr-2 ${tagstyle}`}>
+                                    {log.sender}
+                                </span>
+                                <span
+                                className={log.type ==="task" ? "text-purple-200" : "text-slate-300"}>{log.message}
+
+                                </span>
+
                             </div>
-                        )
+                        );
                     })}
                 </div>
             </div>
-        )
+        );
 }
