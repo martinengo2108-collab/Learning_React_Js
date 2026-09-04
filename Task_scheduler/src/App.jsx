@@ -70,9 +70,19 @@ export default function App() {
             <div className="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700/50 flex flex-col justify-between
             min-h-[500px]">
                 <div>
-                    <h2></h2>
+                    <h2 className="text-2xl font-bold text-white mb-1">Task Manager DashBoard</h2>
+
+                    <p className="text-slate-400 text-sm mb-6">
+                        Manage concurrent tasks,pause threads, and track execution logs asynchronously
+
+                    </p>
+                    <TaskForm onAddTask={handleAddTask} />
                 </div>
+                <TaskList tasks={tasks} onToggleStatus={toggleTaskStatus}/>
             </div>
+
+        
+
           </div>
 
         </div>
