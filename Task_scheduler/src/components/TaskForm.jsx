@@ -14,6 +14,21 @@ export default function TaskForm({onAddTaskk}){
 
         setTaskname;
         setIntervalTime;
-    }
+    };
+    return(
+        <form onSubmit={handleSubmit}
+        className="space-y-4 mb-8">
+            <div>
+                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                    Worker Identity
+                </label>
+                <input type="text"
+                placeholder="ex. DataBase Backup,API Pull"
+                 value={taskName}
+                 onChange={(e)=> setTaskname(e.target.value)}
+                  />
+            </div>
+        </form>
+    )
 
 }
