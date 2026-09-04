@@ -29,7 +29,27 @@ export default function TerminalLog({logs,onClear}){
                         <div className="text-slate-600 italic">
                             Listening from background loops... State empty.
                         </div>
+
                     )}
+                    {logs.map((log,index) =>{
+                        let tagstyle ="text-sky-400 bg-sky-950/40 border border-sky-900/30";
+
+                        if(log.type === "success") tagstyle = "text-emerald-950/40 border border-emerald-900/30";
+
+                        if(log.type ==="warning") tagstyle="text-amber-400 bg-amber-950/40 border border-amber-900/30";
+
+                        if(log.type ==="task") tagstyle="text-purple-400 bg-purple-950/40 border border-purple-900/30";
+
+                        return(
+                            <div
+                            key={index}
+                            className="leading-relaxed border-b border-slate-900/50 pb-1.5 last:border-0">
+                                <span
+                                className="text-slate-500 mr-2">[{log.timesstamp}]</span>
+                                
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         )
