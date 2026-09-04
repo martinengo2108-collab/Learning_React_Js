@@ -20,7 +20,7 @@ export default function TaskForm({onAddTaskk}){
         className="space-y-4 mb-8">
             <div>
                 <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                    Worker Identity
+                    Task Name
                 </label>
                 <input type="text"
                 placeholder="ex. DataBase Backup,API Pull"
@@ -33,7 +33,7 @@ export default function TaskForm({onAddTaskk}){
             </div>
             <button type="submit"
             className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-lg shadow-blue-600/20 transition duration-200">
-                Register Worker
+                Register task
             </button>
         </form>
     )
