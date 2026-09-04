@@ -14,7 +14,22 @@ export default function TerminalLog({logs,onClear}){
                         <span className="text-xs font-mono tracking-wider text-slate-500 hover: text-dslate-300 uppercase transition"></span>
                     </div>
 
-                    .
+                    {logs.length > 0 && (
+                        <button
+                        
+                        onClick={onClear}
+                        className="text-[10px] font-mono tracking-wider text-slate-500 hover:text-slate-300 uppercase transition">
+                            Clear Screen
+                        </button>
+                    )}
+
+                </div>
+                <div className="flex-1 overflow-y-auto font-mono text-xs space-y-2.5 pr-2">
+                    {logs.length === 0 && (
+                        <div className="text-slate-600 italic">
+                            Listening from background loops... State empty.
+                        </div>
+                    )}
                 </div>
             </div>
         )
