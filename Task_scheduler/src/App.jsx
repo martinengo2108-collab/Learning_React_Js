@@ -10,7 +10,7 @@ export default function App() {
         return savedTasks ? JSON.parse(savedTasks) : [];
     });
 
-    const [Logs, setLogs] = useState([]);
+    const [logs, setLogs] = useState([]);
 
     const addLog = (sender, message, type = 'info') => {
 
@@ -50,7 +50,7 @@ export default function App() {
 
     };
 
-    const toogleTaskStatus =(id,name,currentStatus) => {
+    const toggleTaskStatus =(id,name,currentStatus) => {
         const nextStatus = currentStatus === "active" ? "paused" : "active";
         setTasks(tasks.map(task => task.id === id ? { ...task, status: nextStatus } : task));
 
@@ -81,11 +81,12 @@ export default function App() {
                 <TaskList tasks={tasks} onToggleStatus={toggleTaskStatus}/>
             </div>
 
-        
+            <TerminalLog logs={logs} onClear={clearLogs}/>
+
 
           </div>
 
         </div>
-    )
+    );
     
 };
