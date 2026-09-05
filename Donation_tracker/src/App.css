@@ -427,7 +427,132 @@ input {
   max-height: 420px;
   overflow-y: auto;
 }
+.donation-list-header__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
 
+.archive-campaign-button {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.archive-campaign-button:hover {
+  background: var(--primary);
+  color: var(--paper);
+}
+
+.campaign-history {
+  grid-column: 1 / -1;
+  margin-top: 1.25rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.campaign-history__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.campaign-history__item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.campaign-history__summary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  background: var(--paper);
+  border: none;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.campaign-history__period {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+
+.campaign-history__totals {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.campaign-history__toggle {
+  font-size: 0.75rem;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.campaign-history__donors {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0.9rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--paper-raised);
+}
+
+.campaign-history__donor {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.campaign-history__donor:last-child {
+  border-bottom: none;
+}
+
+.campaign-history__donor-name {
+  font-weight: 600;
+  flex: 1;
+}
+
+.campaign-history__donor-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.campaign-history__donor-amount {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+@media (max-width: 720px) {
+  .campaign-history__summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .donation-item {
   display: flex;
   justify-content: space-between;
