@@ -25,6 +25,30 @@ export default function CampaignHistory({history}){
                     const totalRaised =campaign.donations.reduce(
                         (sum,d)=> sum+ d.amount,0
                         
+                    );
+                    const isOpen=openId=== campaign.id;
+                    return(
+                        <li
+                        key={campaign.id}
+                        className="campaign-history__item">
+                            <button
+                            type="button"
+                            className="campaign-history__summary"
+                            onClick={() => toggleOpen(campaign.id)}
+                            aria-expanded={isOpen}>
+                                <span
+                                className="campaign-history__period">
+                                    {formatPeriod(campaign.startDate,campaign.endDate)}
+                                </span>
+                                <span
+                                className="campaign-history__totals">
+
+                                    {totalRaised.toLocalestring()}/ {campaign.goal.toLocalestring()} FCFA &middot; {campaign.donations.length}{" "
+                                    }
+
+                                </span>
+                            </button>
+                        </li>
                     )
                 })}
             </ul>
