@@ -23,18 +23,34 @@ export default function donationList({ donations, onDeleteDonation,
             {donations.length > 0 && (
                 <div className="donation-list-header__actions">
                     <button type="button"
-                    className="archive-campaign-button"
-                    onClick={onArchiveCampaign}>
+                        className="archive-campaign-button"
+                        onClick={onArchiveCampaign}>
                         Archive campaign
                     </button>
                     <button type="button"
-                    className="reset-all-button"
-                    onClick={handleResetAll}>
-                            Reset all
+                        className="reset-all-button"
+                        onClick={handleResetAll}>
+                        Reset all
                     </button>
                 </div>
-           
-                
+
+
+            )}
+
+            {donations.length === 0 ? (
+                <p className="empty-state">
+                    Add donations to get started</p>
+            ) : (
+                <ul className="donation-list">
+                    {donations.map((donation) => (
+                        <DonationItem
+                            key={donation.id}
+                            donation={donation}
+                            onDelete={onDeleteDonation}
+                            onUpdateAmount={onUpdateDonationAmount}
+                        />
+
+                    ))} </ul>
             )}
         </div>
     )
