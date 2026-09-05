@@ -55,8 +55,23 @@ export default function CampaignHistory({history}){
                                 <ul
                                 className="campaign-history__donors">
                                     {campaign.donations.map((donation)=>(
-                                        {campaign.donations.map((donations))}
-                                    ))}
+                                        <li
+                                        key={donation.id}
+                                        className="campaign-history__donor">
+                                            <span
+                                            className="campaign-history__donor-name">{donation.donor}</span>
+                                            <span
+                                            className="campaign-history__donor-date">
+                                                {donation.date}
+                                            </span>
+                                            <span
+                                            className="campaign-history__donor-amount">
+                                                {donation.amount.toLocalestring()} FCFA
+                                            </span>
+                                        </li>
+                                        
+                                        ))}
+                                    
                                 </ul>
                             )}
                         </li>
