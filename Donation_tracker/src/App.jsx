@@ -5,6 +5,7 @@ import DashBoard from "./component/dashBoard.jsx";
 const donations_keys = "TiC_donations";
 const default_goal = 100000;
 const goal_key = "TiC_goal";
+const history_key="TiC_history";
 
 function loadDonations() {
     try {
@@ -25,6 +26,17 @@ function loadGoal() {
     }
     catch {
         return default_goal;
+    }
+}
+
+function loadHistory(){
+    try{
+        const stored =localStorage.getItem(history_key);
+
+        return stored ? JSON.parse(stored):[];
+    }
+    catch{
+        return [];
     }
 }
 export default function App() {
