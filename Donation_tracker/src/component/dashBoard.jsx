@@ -48,7 +48,7 @@ export default function DashBoard({ donations
                 aria-label="Fundraising progress">
                 <ProgressBar percent={percentFunded}
                     goal={goal}
-                    /*raised={totalRaised}*/
+                    raised={totalRaised}
                     onUpdateGoal={onUpdateGoal}/>
             </section>
             <section className="content-grid">
@@ -58,7 +58,7 @@ export default function DashBoard({ donations
                     {topDonation && (
                         <div className="top-donor-card">
                             <span className="top-donor-label">Top Donation</span>
-                            <span className="top-donor-name">{topDonation.name}</span>
+                            <span className="top-donor-name">{topDonation.donor}</span>
                             <span className="top-donor-amount">{topDonation.amount.toLocaleString()} FCFA</span>
                         </div>
                     )}
