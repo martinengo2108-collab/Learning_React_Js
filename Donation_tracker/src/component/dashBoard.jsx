@@ -72,6 +72,7 @@ export default function DashBoard({ donations
                         onArchiveCampaign={onArchiveCampaign} />
                 </div>
             </section>
+            <CampaignHistory history={history}/>
         </main>
     );
 

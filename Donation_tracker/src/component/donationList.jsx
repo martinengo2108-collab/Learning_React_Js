@@ -1,6 +1,18 @@
 import DonationItem from "./donationItem.jsx"
 
-export default function donationList({donations ,onDeleteDonation}){
+export default function donationList({donations ,onDeleteDonation,
+    onResetDonations,onUpdateDonationAmount,
+    onArchiveCampaign,
+
+}){
+    function handleResetAll(){
+        const confirmed = window.confirm(
+            "Delete all donations?This can be undone"
+        );
+        if(confirmed){
+            onResetDonations();
+        }
+    }
     return (
         <div className="donation-list-card">
             <h2 className="form-title">Recent donations</h2>
