@@ -96,6 +96,28 @@ function archiveCampaign(){
 
         return;
     }
+
+    const confirmed = window.confirm(
+        "Archive this campaign? Its donations will move to Past campaign and the current list will be cleared."
+    );
+    if (!confirmed){
+        return;
+    }
+    const sortedDates = donations.map((d) => d.date).sort();
+
+    const startDate = sortedDates[0];
+    const endDate = sortedDates[sortedDates.length -1];
+
+    const archivedcampaign ={
+        id:Date.now(),
+        goal,
+        donations,
+        startDate,
+        endDate,
+    };
+
+    setHistory((prev) =>[archiveCampaign,...prev]);
+    setDonations;
 }
 
     return (
