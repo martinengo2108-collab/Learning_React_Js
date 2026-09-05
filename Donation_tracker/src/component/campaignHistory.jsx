@@ -43,11 +43,22 @@ export default function CampaignHistory({history}){
                                 <span
                                 className="campaign-history__totals">
 
-                                    {totalRaised.toLocalestring()}/ {campaign.goal.toLocalestring()} FCFA &middot; {campaign.donations.length}{" "
-                                    }
+                                    {totalRaised.toLocalestring()}/ {campaign.goal.toLocalestring()} FCFA &middot; {campaign.donations.length}{" "}
+                                    {campaign.donations.length ===1 ? "donor ":"donors" }
 
                                 </span>
+                                <span
+                                className="campaign-history__toogle"
+                                >{isOpen ? "Hide donors": "View donors"}</span>
                             </button>
+                            {isOpen && (
+                                <ul
+                                className="campaign-history__donors">
+                                    {campaign.donations.map((donation)=>(
+                                        {campaign.donations.map((donations))}
+                                    ))}
+                                </ul>
+                            )}
                         </li>
                     )
                 })}
