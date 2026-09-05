@@ -128,9 +128,13 @@ function archiveCampaign(){
             </header>
             <DashBoard donations={donations}
                 goal={goal}
+                history={history}
                 onAddDonation={addDonation}
                 onDeleteDonation={deleteDonation}
                 onUpdateGoal={upDateGoal}
+                onResetDonations={resetDonations}
+                onUpdateDonationAmount={updateDonationAmount}
+                onArchiveCampaign ={archiveCampaign}
             />
             <footer className="app-footer">
 

@@ -5,11 +5,18 @@ import DonorCount from "./donorCount.jsx";
 import ProgressBar from "./progressBar.jsx";
 import DonationForm from "./donationForm.jsx";
 import DonationList from "./donationList.jsx";
+import CampaignHistory from "./campaignHistory.jsx";
+
 
 export default function DashBoard({ donations
     , goal,
+    history,
     onAddDonation,
-    onUpdateGoal, onDeleteDonation
+    onUpdateGoal,
+    onResetDonations,
+    onUpdateDonationamount,
+     onDeleteDonation,
+     onArchiveCampaign,
 }) {
     const totalRaised = donations.reduce((sum, d) => sum + d.amount, 0);
     const remaining = Math.max(goal - totalRaised, 0);
@@ -41,8 +48,8 @@ export default function DashBoard({ donations
                 aria-label="Fundraising progress">
                 <ProgressBar percent={percentFunded}
                     goal={goal}
-                    raised={totalRaised}
-                    onUpdateGoal={onUpdateGoal}></ProgressBar>
+                    /*raised={totalRaised}*/
+                    onUpdateGoal={onUpdateGoal}/>
             </section>
             <section className="content-grid">
                 <div className="content-column">
@@ -59,7 +66,10 @@ export default function DashBoard({ donations
                 <div className="content-column">
                     <DonationList
                         donations={donations}
-                        onDeleteDonation={onDeleteDonation} />
+                        onDeleteDonation={onDeleteDonation}
+                        onResetDonations={onResetDonations}
+                        onUpdateDonationamount={onUpdateDonationamount}
+                        onArchiveCampaign={onArchiveCampaign} />
                 </div>
             </section>
         </main>
