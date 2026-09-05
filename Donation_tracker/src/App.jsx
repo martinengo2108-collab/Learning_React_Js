@@ -89,6 +89,15 @@ export default function App() {
     );
 }
 
+function archiveCampaign(){
+
+    if (donations.length ===0){
+        window.alert("Nothing to archive yet -- add at least one donr first");
+
+        return;
+    }
+}
+
     return (
         <div className="app-shell">
             <header className="app-header">
