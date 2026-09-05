@@ -50,7 +50,8 @@ export default function donationList({ donations, onDeleteDonation,
                             onUpdateAmount={onUpdateDonationAmount}
                         />
 
-                    ))} </ul>
+                    ))} 
+                    </ul>
             )}
         </div>
     )
