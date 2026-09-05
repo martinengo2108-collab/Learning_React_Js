@@ -44,6 +44,8 @@ export default function App() {
     const [donations, setDonations] = useState(loadDonations);
     const [goal, setGoal] = useState(loadGoal);
 
+    const [history,setHistory] = useState(loadHistory);
+
     useEffect(() => {
         localStorage.setItem(donations_keys, JSON.stringify(donations));
     }, [donations]);
@@ -51,6 +53,10 @@ export default function App() {
     useEffect(() => {
         localStorage.setItem(goal_key, String(goal));
     }, [goal]);
+    
+    useEffect(() => {
+        localStorage.setItem(history_key,JSON.stringify(history));
+    }, [history]);
 
     function addDonation(donation) {
         const nextId = donations.length > 0 ? Math.max(...donations.map((d) => d.id)) + 1 : 1;
@@ -71,6 +77,17 @@ export default function App() {
     function upDateGoal(newGoal) {
         setGoal(newGoal);
     }
+
+    function resetDonations(){
+
+        setDonations([]);
+    }
+    function updateDonationAmount(id, newAmount){
+
+        setDonations((prev) =>
+        prev.map((d) => (d.id === id ? {...d, amount:newAmount} : d))
+    );
+}
 
     return (
         <div className="app-shell">
