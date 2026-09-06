@@ -626,6 +626,23 @@ input {
   gap: 0.35rem;
   flex-wrap: wrap;
 }
+
+.donation-item__edit-form input {
+  width: 90px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.4rem;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+
+.donation-item__edit-form input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
 .donation-item__delete {
   background: transparent;
   border: 1px solid var(--brick);
