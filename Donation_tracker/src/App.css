@@ -657,6 +657,21 @@ input {
   background: var(--primary);
   color: var(--paper);
 }
+
+.donation-item__save:hover {
+  background: var(--primary-dark);
+}
+
+.donation-item__cancel {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.donation-item__edit-error {
+  flex-basis: 100%;
+  font-size: 0.7rem;
+}
 .donation-item__delete {
   background: transparent;
   border: 1px solid var(--brick);
