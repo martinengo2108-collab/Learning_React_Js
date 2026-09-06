@@ -18,24 +18,25 @@ export default function donationList({ donations, onDeleteDonation,
             <div className="donation-list-header">
                 <h2 className="form-title">Recent donations</h2>
 
+
+
+                {donations.length > 0 && (
+                    <div className="donation-list-header__actions">
+                        <button type="button"
+                            className="archive-campaign-button"
+                            onClick={onArchiveCampaign}>
+                            Archive campaign
+                        </button>
+                        <button type="button"
+                            className="reset-all-button"
+                            onClick={handleResetAll}>
+                            Reset all
+                        </button>
+                    </div>
+
+
+                )}
             </div>
-
-            {donations.length > 0 && (
-                <div className="donation-list-header__actions">
-                    <button type="button"
-                        className="archive-campaign-button"
-                        onClick={onArchiveCampaign}>
-                        Archive campaign
-                    </button>
-                    <button type="button"
-                        className="reset-all-button"
-                        onClick={handleResetAll}>
-                        Reset all
-                    </button>
-                </div>
-
-
-            )}
 
             {donations.length === 0 ? (
                 <p className="empty-state">
@@ -50,8 +51,8 @@ export default function donationList({ donations, onDeleteDonation,
                             onUpdateAmount={onUpdateDonationAmount}
                         />
 
-                    ))} 
-                    </ul>
+                    ))}
+                </ul>
             )}
         </div>
     )
