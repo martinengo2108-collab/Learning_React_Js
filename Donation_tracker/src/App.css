@@ -643,6 +643,20 @@ input {
   outline-offset: 1px;
 }
 
+
+.donation-item__save,
+.donation-item__cancel {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.donation-item__save {
+  background: var(--primary);
+  color: var(--paper);
+}
 .donation-item__delete {
   background: transparent;
   border: 1px solid var(--brick);
