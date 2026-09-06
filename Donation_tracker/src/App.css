@@ -601,6 +601,21 @@ input {
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
 }
+
+.reset-all-button:hover {
+  background: var(--brick);
+  color: var(--paper);
+}
+
+.donation-item__amount--editable {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
 .donation-item__delete {
   background: transparent;
   border: 1px solid var(--brick);
