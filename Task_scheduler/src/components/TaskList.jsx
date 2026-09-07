@@ -10,24 +10,27 @@ export default function TaskList({ tasks, onToggleStatus }) {
             </h3>
             {tasks.length === 0 ? (<p
                 className="text-sm text-slate-500 italic"
-            >No task mapped out in JSON local storage memory</p>) : ( 
+            >No task mapped out in JSON local storage memory</p>) : (
                 <div className="space-y-2 max-h-48 overflow-y-auto pr-1" >
-                    {tasks.map((task) =>(
-                        <div 
-                        key={task.id} className="flex justify-between items-center bg-slate-900/60 border-slate-700/40 px-4 py-3 rounded-xl">
+                    {tasks.map((task) => (
+                        <div
+                            key={task.id} className="flex justify-between items-center bg-slate-900/60 border-slate-700/40 px-4 py-3 rounded-xl">
                             <div>
-                                <span 
-                                className="text-xs text-slate-400 pl-4 block mt-0.5"> Execute every {task.delay}s</span>
+                                <p className="text-sm text-white font-medium">
+                                    {task.name}
+                                </p>
+                                <span
+                                    className="text-xs text-slate-400"> Execute every {task.interval} {task.unit}
+                                </span>
                             </div>
 
-                            <button onClick={() => onToggleStatus(task.id,task.name,task.status)}
-                                className={`text-xs px-3 py-1.5 font-medium rounded-md transition border ${
-                                    task.status ==="active"?
-                                    "bg-amber-500/100 hover:bg-amber-500/20 text-amber-400 border-emerald-500/20":
-                                    "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border-emerald-500/20"
-                                }`}>
-                                    {task.status === "active" ?"Pause ": "Resume"}
-                                </button>
+                            <button onClick={() => onToggleStatus(task.id, task.name, task.status)}
+                                className={`text-xs px-3 py-1.5 font-medium rounded-md transition border ${task.status === "active" ?
+                                        "bg-amber-500/100 hover:bg-amber-500/20 text-amber-400 border-emerald-500/20" :
+                                        "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border-emerald-500/20"
+                                    }`}>
+                                {task.status === "active" ? "Pause " : "Resume"}
+                            </button>
                         </div>
                     ))
                     }
