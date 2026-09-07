@@ -44,13 +44,21 @@ function App() {
       message: `Task "${name}" is now ${newStatus}.`
     }]);
   };
+
+  const clearLogs =()=>{
+
+    setLogs([]);
+
+  }
   return (
     <div>
       <h1>Task Scheduler</h1>
 
-      <TaskForm />
-      <TaskList />
-      <TerminalLog />
+      <TaskForm onAddTaskk={addTask} />
+      <TaskList  tasks={tasks}
+      onToggleStatus={toggleStatus}/>
+      <TerminalLog logs={logs}
+      onClear={clearLogs}/>
     </div>
   );
 }
