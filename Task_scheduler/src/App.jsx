@@ -10,23 +10,31 @@ function App() {
   const [logs, setLogs] = useState([]);
 
 
-  const conertToMilliSeconds=(value,unit)=>{
+  const convertToMilliSeconds=(value,unit)=>{
     const conversions={
       seconds:1000,
       minutes:60*1000,
       hours:60*60*1000,
       days:24*60*60*1000,
       weeks:7*24*60*60*1000
+
     };
 
     return value* conversions[unit];
   };
 
-  const addTask = (taskName, intervalTime) => {
+  const addTask = (taskName, intervalTime,intervalUnit) => {
+
+    const delay= convertToMilliSeconds(
+      intervalTime,
+      intervalUnit
+    );
     const newTask = {
       id: Date.now(),
       name: taskName,
       delay: intervalTime,
+      unit:intervalUnit,
+      delay:delay,
       status: "active"
     };
 
@@ -38,7 +46,7 @@ function App() {
         timestamp: new Date().toLocaleTimeString(),
         sender: "SYSTEM",
         type: "sucess",
-        message: `Task "${taskName}" registered sucessfully.`
+        message: `Task "${taskName}" registered every ${intervalTime} ${intervalUnit}.`
       }
     ]);
   };
@@ -53,7 +61,7 @@ function App() {
     );
     setLogs((currentLogs) => [...currentLogs, {
       timestamp: new Date().toLocaleTimeString(),
-      sender: "SYSTEM",
+      sender: "SYSTEM",type:"warning",
       message: `Task "${name}" is now ${newStatus}.`
     }]);
   };
@@ -62,7 +70,7 @@ function App() {
 
     setLogs([]);
 
-  }
+  };
   return (
     <div>
       <h1>Task Scheduler</h1>
