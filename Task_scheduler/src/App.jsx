@@ -25,7 +25,7 @@ function App() {
         timestamp: new Date().toLocaleTimeString(),
         sender: "SYSTEM",
         type: "sucess",
-        message: `Task"${taskName}" registered sucessfully.`
+        message: `Task "${taskName}" registered sucessfully.`
       }
     ]);
   };

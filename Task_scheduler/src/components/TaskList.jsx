@@ -17,7 +17,7 @@ export default function TaskList({ tasks, onToggleStatus }) {
                         key={task.id} className="flex justify-between items-center bg-slate-900/60 border-slate-700/40 px-4 py-3 rounded-xl">
                             <div>
                                 <span 
-                                className="text-xs text-slate-400 pl-4 block mt-0.5"> Execute every {tasks.delay}s</span>
+                                className="text-xs text-slate-400 pl-4 block mt-0.5"> Execute every {task.delay}s</span>
                             </div>
 
                             <button onClick={() => onToggleStatus(task.id,task.name,task.status)}
