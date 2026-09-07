@@ -116,8 +116,8 @@ function archiveCampaign(){
         endDate,
     };
 
-    setHistory((prev) =>[archiveCampaign,...prev]);
-    setDonations;
+    setHistory((prev) =>[archivedCampaign,...prev]);
+    setDonations ([]);
 }
 
     return (

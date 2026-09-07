@@ -4,7 +4,7 @@ export default function CampaignHistory({history}){
     const[openId,setOpenId]= useState(null);
 
     function toggleOpen(id){
-        setOpenId =>((prev )=== id ? null:id)
+        setOpenId((prev) => (prev === id ? null:id));
     }
     function formatPeriod(startDate,endDate){
         return startDate=== endDate ? startDate: `${startDate} to ${endDate}`
@@ -23,10 +23,10 @@ export default function CampaignHistory({history}){
                 {history.map((campaign)=>{
 
                     const totalRaised =campaign.donations.reduce(
-                        (sum,d)=> sum+ d.amount,0
+                        (sum,d)=> sum + d.amount,0
                         
                     );
-                    const isOpen=openId=== campaign.id;
+                    const isOpen = openId === campaign.id;
                     return(
                         <li
                         key={campaign.id}
@@ -48,7 +48,7 @@ export default function CampaignHistory({history}){
 
                                 </span>
                                 <span
-                                className="campaign-history__toogle"
+                                className="campaign-history__toggle"
                                 >{isOpen ? "Hide donors": "View donors"}</span>
                             </button>
                             {isOpen && (
@@ -75,9 +75,9 @@ export default function CampaignHistory({history}){
                                 </ul>
                             )}
                         </li>
-                    )
+                    );
                 })}
             </ul>
         </section>
-    )
+    );
 }

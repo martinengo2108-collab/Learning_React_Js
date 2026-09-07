@@ -14,7 +14,7 @@ export default function DashBoard({ donations
     onAddDonation,
     onUpdateGoal,
     onResetDonations,
-    onUpdateDonationamount,
+    onUpdateDonationAmount,
      onDeleteDonation,
      onArchiveCampaign,
 }) {
@@ -68,7 +68,7 @@ export default function DashBoard({ donations
                         donations={donations}
                         onDeleteDonation={onDeleteDonation}
                         onResetDonations={onResetDonations}
-                        onUpdateDonationamount={onUpdateDonationamount}
+                        onUpdateDonationamount={onUpdateDonationAmount}
                         onArchiveCampaign={onArchiveCampaign} />
                 </div>
             </section>
