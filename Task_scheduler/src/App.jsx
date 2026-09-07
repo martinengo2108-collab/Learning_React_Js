@@ -7,7 +7,20 @@ import TerminalLog from "./components/TerminalLog";
 function App() {
 
   const [tasks, setTasks] = useState([]);
-  const [logs, setLogs] = useState([])
+  const [logs, setLogs] = useState([]);
+
+
+  const conertToMilliSeconds=(value,unit)=>{
+    const conversions={
+      seconds:1000,
+      minutes:60*1000,
+      hours:60*60*1000,
+      days:24*60*60*1000,
+      weeks:7*24*60*60*1000
+    };
+
+    return value* conversions[unit];
+  };
 
   const addTask = (taskName, intervalTime) => {
     const newTask = {
