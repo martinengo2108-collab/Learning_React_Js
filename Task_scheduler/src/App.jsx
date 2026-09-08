@@ -24,7 +24,7 @@ function App() {
   const intervalsRef = useRef({});
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON, stringify(tasks));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
 
 
@@ -86,7 +86,7 @@ function App() {
 
     tasks.forEach((task) => {
       if (task.status === "active") {
-        intervalsRef.currentt[tasks.id] = setInterval(() => {
+        intervalsRef.current[tasks.id] = setInterval(() => {
           runTask(task.id, task.name);
         }, task.delaysMs);
       }
