@@ -28,17 +28,17 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
                                     onClick={() => onToggleStatus(task.id, task.name, task.status)}
                                     className={`text-xs px-3 py-1.5 font-medium rounded-md transition border-2 ${task.status === "active" ? "bg-amber-50 hover:bg-amber-100 text-amber-700 borcer-amber-300" : "bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border-emerald-300"
                                         }`}>
-                                    {task.status === "active" ? "pause" : "Resume"}
+                                    {task.status === "active" ? "Pause" : "Resume"}
                                 </button>
+                                <button
+                                onClick={()=>{
+                                    if(window.confirm(`Delete task "${task.name}" ?`)){
+                                        onDeleteTask(task.id ,task.name);
+                                    }
+                                }}>Delete</button>
                             </div>
 
-                            <button onClick={() => onToggleStatus(task.id, task.name, task.status)}
-                                className={`text-xs px-3 py-1.5 font-medium rounded-md transition border ${task.status === "active" ?
-                                    "bg-amber-500/100 hover:bg-amber-500/20 text-amber-400 border-emerald-500/20" :
-                                    "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border-emerald-500/20"
-                                    }`}>
-                                {task.status === "active" ? "Pause " : "Resume"}
-                            </button>
+                           
                         </div>
                     ))
                     }
