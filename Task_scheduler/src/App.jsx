@@ -142,12 +142,12 @@ function App() {
   const deleteTask = (id, name) => {
     setTasks((currentTasks) => currentTasks.filter((task) => task.id !== id));
 
-    setLogs((currentLogs)=>[
-      ...currentLogs,{
-        timestamp:new Date().toLocaleTimeString(),
-        sender:"SYSTEM",
-        type:"warning",
-        message:`Task"${name}" deleted.`
+    setLogs((currentLogs) => [
+      ...currentLogs, {
+        timestamp: new Date().toLocaleTimeString(),
+        sender: "SYSTEM",
+        type: "warning",
+        message: `Task"${name}" deleted.`
       }
     ])
   }
@@ -158,36 +158,31 @@ function App() {
 
   };
   return (
-    <div>
-      
-      <div className="min-h-screen bg-white text-slate-800">
-        <div className="max-w-4xl mx-auto px-6 py-10">
-          <header className="mb-8 border-b-4 border-blue-600 pb-4">
-            <h1 className="text-sm text-slate-500 mt-1">Task Scheduler</h1>
-            <p className="text-sm text-slate-500 mt-1">
-              Register recurring jobs and watch tem run.
-            </p>
-          </header>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <TaskForm onAddTask={addTask} />
-              <TaskList 
+
+
+    <div className="min-h-screen bg-white text-slate-800">
+      <div className="max-w-4xl mx-auto px-6 py-10">
+        <header className="mb-8 border-b-4 border-blue-600 pb-4">
+          <h1 className="text-sm text-slate-500 mt-1">Task Scheduler</h1>
+          <p className="text-sm text-slate-500 mt-1">
+            Register recurring jobs and watch tem run.
+          </p>
+        </header>
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="bg-white border border-slate-200 rounded-xl p-6">
+            <TaskForm onAddTask={addTask} />
+            <TaskList
               tasks={tasks}
               onToggleStatus={toggleStatus}
-              onDeletetask={deleteTask}/>
+              onDeletetask={deleteTask} />
 
-            </div>
-            <TerminalLog logs={logs} onClear={clearLogs}         />
           </div>
+          <TerminalLog logs={logs} onClear={clearLogs} />
         </div>
       </div>
-
-      <TaskForm onAddTaskk={addTask} />
-      <TaskList tasks={tasks}
-        onToggleStatus={toggleStatus} />
-      <TerminalLog logs={logs}
-        onClear={clearLogs} />
     </div>
+
+
   );
 }
 
