@@ -168,6 +168,17 @@ function App() {
               Register recurring jobs and watch tem run.
             </p>
           </header>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <TaskForm onAddTask={addTask} />
+              <TaskList 
+              tasks={tasks}
+              onToggleStatus={toggleStatus}
+              onDeletetask={deleteTask}/>
+
+            </div>
+            <TerminalLog logs={logs} onClear={clearLogs}         />
+          </div>
         </div>
       </div>
 
