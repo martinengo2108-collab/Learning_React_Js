@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect,useRef } from "react";
 
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import TerminalLog from "./components/TerminalLog";
 
+const STORAGE_KEY ="scheduler_tasks";
+
 function App() {
+  
+  const [tasks, setTasks] = useState(() =>{
+    try{
+      const stored = localStorage.getItem(STORAGE_KEY);
+
+      return stored? JSON.parse(stored): [];
+    } catch(err){
+      console.error("Could not read saved tasks:", err);
+
+      return [];
+    }
+  });
+
+  
+
 
   const [tasks, setTasks] = useState([]);
   const [logs, setLogs] = useState([]);
