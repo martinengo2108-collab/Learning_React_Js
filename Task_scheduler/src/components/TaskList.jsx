@@ -31,14 +31,14 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
                                     {task.status === "active" ? "Pause" : "Resume"}
                                 </button>
                                 <button
-                                onClick={()=>{
-                                    if(window.confirm(`Delete task "${task.name}" ?`)){
-                                        onDeleteTask(task.id ,task.name);
-                                    }
-                                }}>Delete</button>
+                                    onClick={() => {
+                                        if (window.confirm(`Delete task "${task.name}" ?`)) {
+                                            onDeleteTask(task.id, task.name);
+                                        }
+                                    }}>Delete</button>
                             </div>
 
-                           
+
                         </div>
                     ))
                     }
