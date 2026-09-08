@@ -43,7 +43,7 @@ export default function CampaignHistory({history}){
                                 <span
                                 className="campaign-history__totals">
 
-                                    {totalRaised.toLocalestring()}/ {campaign.goal.toLocalestring()} FCFA &middot; {campaign.donations.length}{" "}
+                                    {totalRaised.toLocaleString()}/ {campaign.goal.toLocaleString()} FCFA &middot; {campaign.donations.length}{" "}
                                     {campaign.donations.length ===1 ? "donor ":"donors" }
 
                                 </span>
@@ -66,7 +66,7 @@ export default function CampaignHistory({history}){
                                             </span>
                                             <span
                                             className="campaign-history__donor-amount">
-                                                {donation.amount.toLocalestring()} FCFA
+                                                {donation.amount.toLocaleString()} FCFA
                                             </span>
                                         </li>
                                         
