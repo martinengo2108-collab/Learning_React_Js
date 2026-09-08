@@ -79,6 +79,20 @@ function App() {
     ]);
   };
 
+  useEffect(()=>{
+    Object.values(intervalsRef.current).forEach(clearInterval);
+
+    intervalsRef.current ={};
+
+    tasks.forEach((task)=>{
+      if(task.status === "active"){
+        intervalsRef.currentt[tasks.id]=setInterval(()=>{
+          runTask(task.id,task.name);
+        },task.delaysMs);
+      }
+    });
+  })
+
   const addTask = (taskName, intervalTime, intervalUnit) => {
 
     const delay = convertToMilliSeconds(
