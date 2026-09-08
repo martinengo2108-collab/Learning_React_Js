@@ -71,44 +71,44 @@ function App() {
     setLogs((currentLogs) => [
       ...currentLogs, {
         timestamp: newDate().toLocaleTimeString(),
-        sender:"SCHEDULER",
-        type:"task",
+        sender: "SCHEDULER",
+        type: "task",
 
-        message:`Task "${name}" executed sucessfully.`
+        message: `Task "${name}" executed sucessfully.`
       }
     ]);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     Object.values(intervalsRef.current).forEach(clearInterval);
 
-    intervalsRef.current ={};
+    intervalsRef.current = {};
 
-    tasks.forEach((task)=>{
-      if(task.status === "active"){
-        intervalsRef.currentt[tasks.id]=setInterval(()=>{
-          runTask(task.id,task.name);
-        },task.delaysMs);
+    tasks.forEach((task) => {
+      if (task.status === "active") {
+        intervalsRef.currentt[tasks.id] = setInterval(() => {
+          runTask(task.id, task.name);
+        }, task.delaysMs);
       }
     });
-    return()=>{
+    return () => {
 
       Object.values(intervalsRef.current).forEach(clearInterval);
     };
-  },[tasks]);
+  }, [tasks]);
 
   const addTask = (taskName, intervalTime, intervalUnit) => {
 
-    const delay = convertToMilliSeconds(
+    const delayMs = convertToMilliSeconds(
       intervalTime,
       intervalUnit
     );
     const newTask = {
       id: Date.now(),
       name: taskName,
-      delay: intervalTime,
+      interval: intervalTime,
       unit: intervalUnit,
-      delay: delay,
+      delayMs,
       status: "active"
     };
 
@@ -139,6 +139,18 @@ function App() {
       message: `Task "${name}" is now ${newStatus}.`
     }]);
   };
+  const deleteTask = (id, name) => {
+    setTasks((currentTasks) => currentTasks.filter((task) => task.id !== id));
+
+    setLogs((currentLogs)=>[
+      ...currentLogs,{
+        timestamp:new Date().toLocaleTimeString(),
+        sender:"SYSTEM",
+        type:"warning",
+        message:`Task"${name}" deleted.`
+      }
+    ])
+  }
 
   const clearLogs = () => {
 
