@@ -91,7 +91,11 @@ function App() {
         },task.delaysMs);
       }
     });
-  })
+    return()=>{
+
+      Object.values(intervalsRef.current).forEach(clearInterval);
+    };
+  },[tasks]);
 
   const addTask = (taskName, intervalTime, intervalUnit) => {
 
