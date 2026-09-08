@@ -50,15 +50,34 @@ function App() {
       const gain = ctx.createGain();
 
       oscillator.type = "sine";
-      oscillator.frequency.value= 880;
+      oscillator.frequency.value = 880;
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.35);
 
       oscillator.connect(gain);
-      gain.connect
+      gain.connect(ctx.destination);
 
+      oscillator.start();
+      oscillator.stop(ctx.currentTime + 0.35);
+
+    } catch (err) {
+      console.error("Could not play alarm sound:" err)
     }
 
-  }
+  };
+
+  const runTask = (id, name) => {
+    playBeep();
+
+    setLogs((currentLogs) => [
+      ...currentLogs, {
+        timestamp: newDate().toLocaleTimeString(),
+        sender:"SCHEDULER",
+        type:"task",
+
+        message:`Task "${name}" executed sucessfully.`
+      }
+    ]);
+  };
 
   const addTask = (taskName, intervalTime, intervalUnit) => {
 
