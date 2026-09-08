@@ -60,7 +60,7 @@ function App() {
       oscillator.stop(ctx.currentTime + 0.35);
 
     } catch (err) {
-      console.error("Could not play alarm sound:" err)
+      console.error("Could not play alarm sound:", err)
     }
 
   };
