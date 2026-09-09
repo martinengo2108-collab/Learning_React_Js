@@ -10,3 +10,17 @@ export async function getPosts(){
 
     return response.json();
 }
+export async function createPost(postData){
+    const response = await fetch(API_URL,{
+        method:"POST",
+
+        headers:{
+            "Content-type":"application/json"
+        },
+        body:JSON.stringify(postData)
+    });
+    if (!response.ok){
+        throw new Error("Failed to create post");
+    }
+    return response.json();
+}
