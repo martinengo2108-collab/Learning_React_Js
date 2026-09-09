@@ -44,7 +44,7 @@ export default function TerminalLog({logs,onClear}){
                             key={index}
                             className="leading-relaxed border-b border-slate-100 pb-1.5 last:border-0">
                                 <span
-                                className="text-slate-500 mr-2">[{log.timesstamp}]</span>
+                                className="text-slate-500 mr-2">[{log.timestamp}]</span>
                                 <span className={`px-1.5 py-0.5 rounded text-[10px] uppercase font-boldd tracking-wide mr-2 ${tagstyle}`}>
                                     {log.sender}
                                 </span>
