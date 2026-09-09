@@ -15,7 +15,7 @@ export default function TaskForm({ onAddTaskk }) {
             intervalUnit);
 
         setTaskname("");
-        setIntervalTime(" ");
+        setIntervalTime("");
         setIntervalUnit("seconds");
     };
     return (
@@ -37,7 +37,7 @@ export default function TaskForm({ onAddTaskk }) {
 
             <div>
                 <label
-                    className="block text-xs font--semibold text-slate-500 mb-2">
+                    className="block text-xs font-semibold text-slate-500 mb-2">
                     Run every
                 </label>
                 <div className="flex gap-2">

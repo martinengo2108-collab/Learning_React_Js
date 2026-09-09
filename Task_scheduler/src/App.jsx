@@ -45,7 +45,7 @@ function App() {
   const playBeep = () => {
 
     try {
-      const ctx = new (window.AudioContext || window.webkitAudioContent)();
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
       const oscillator = ctx.createOscillator();
       const gain = ctx.createGain();
 
