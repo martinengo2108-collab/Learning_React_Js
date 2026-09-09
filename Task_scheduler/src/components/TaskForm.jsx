@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export default function TaskForm({ onAddTaskk }) {
+export default function TaskForm({ onAddTask }) {
     const [taskName, setTaskname] = useState("");
 
     const [intervalTime, setIntervalTime] = useState("");

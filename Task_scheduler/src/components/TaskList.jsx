@@ -14,7 +14,7 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
                 <div className="space-y-2 max-h-64 overflow-y-auto pr-1" >
                     {tasks.map((task) => (
                         <div
-                            key={task.id} className="flex justify-between items-center bg-slate-60 border-l-4 border-blue-600 border-y border-r borderr-slate-200 px-4py-3 rounded-lg ">
+                            key={task.id} className="flex justify-between items-center bg-slate-50 border-l-4 border-blue-600 border-y border-r border-slate-200 px-4 py-3 rounded-lg ">
                             <div>
                                 <p className="text-sm text-slate-900 font-medium">
                                     {task.name}
@@ -26,7 +26,7 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
                             <div className="flex items-center gap-2">
                                 <button
                                     onClick={() => onToggleStatus(task.id, task.name, task.status)}
-                                    className={`text-xs px-3 py-1.5 font-medium rounded-md transition border-2 ${task.status === "active" ? "bg-amber-50 hover:bg-amber-100 text-amber-700 borcer-amber-300" : "bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border-emerald-300"
+                                    className={`text-xs px-3 py-1.5 font-medium rounded-md transition border-2 ${task.status === "active" ? "bg-amber-50 hover:bg-amber-100 text-amber-700 border-amber-300" : "bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border-emerald-300"
                                         }`}>
                                     {task.status === "active" ? "Pause" : "Resume"}
                                 </button>

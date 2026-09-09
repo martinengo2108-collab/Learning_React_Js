@@ -174,7 +174,7 @@ function App() {
             <TaskList
               tasks={tasks}
               onToggleStatus={toggleStatus}
-              onDeletetask={deleteTask} />
+              onDeleteTask={deleteTask} />
 
           </div>
           <TerminalLog logs={logs} onClear={clearLogs} />
