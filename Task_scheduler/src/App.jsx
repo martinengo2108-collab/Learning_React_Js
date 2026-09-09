@@ -147,7 +147,7 @@ function App() {
         timestamp: new Date().toLocaleTimeString(),
         sender: "SYSTEM",
         type: "warning",
-        message: `Task"${name}" deleted.`
+        message: `Task "${name}" deleted.`
       }
     ])
   }

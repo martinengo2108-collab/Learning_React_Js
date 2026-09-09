@@ -11,8 +11,8 @@ export default function TaskForm({ onAddTask }) {
 
         if (!taskName.trim() || !intervalTime) return;
 
-        onAddTaskk(taskName, parseInt(intervalTime, 10),
-            intervalUnit);
+        onAddTask(taskName, parseInt(intervalTime, 10),
+        intervalUnit);
 
         setTaskname("");
         setIntervalTime("");
