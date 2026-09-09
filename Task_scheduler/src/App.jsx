@@ -91,7 +91,7 @@ function App() {
 
     tasks.forEach((task) => {
       if (task.status === "active") {
-        intervalsRef.current[tasks.id] = setInterval(() => {
+        intervalsRef.current[task.id] = setInterval(() => {
           runTask(task.id, task.name);
         }, task.delaysMs);
       }
