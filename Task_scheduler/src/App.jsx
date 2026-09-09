@@ -23,6 +23,8 @@ function App() {
 
   const intervalsRef = useRef({});
 
+  const audioCtxRef = useRef(null);
+
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
@@ -70,7 +72,7 @@ function App() {
 
     setLogs((currentLogs) => [
       ...currentLogs, {
-        timestamp: newDate().toLocaleTimeString(),
+        timestamp: new Date().toLocaleTimeString(),
         sender: "SCHEDULER",
         type: "task",
 
