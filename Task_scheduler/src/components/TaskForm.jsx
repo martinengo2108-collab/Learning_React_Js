@@ -79,7 +79,13 @@ export default function TaskForm({ onAddTask }) {
                         <button
                             key={level}
                             type="button"
-                            onClick={() =>setPriority}>
+                            onClick={() => setPriority(level)}
+                            className={
+                                `flex-1 text-xs font-medium py-2 rounded-lg border-2 capitalize transition
+                                ${priority === level ? priorityStyles[level]:"bg-white border-slate-200 text-slate-400"
+                                }`
+                            }>
+                                {level}
 
 
                         </button>
@@ -88,10 +94,10 @@ export default function TaskForm({ onAddTask }) {
             </div>
 
             <button type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-lg border-2 border-blue-600 transition duration-200">
+                className="w-full bg-[#8B5CF6] hover:opacity-90 text-white font-semibold py-2.5 rounded-lg border-2 border-[#8B5CF6] transition duration-200">
                 Register task
             </button>
         </form>
-    )
+    );
 
-}
+};
