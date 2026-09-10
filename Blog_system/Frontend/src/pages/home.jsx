@@ -69,4 +69,29 @@ function Home() {
             alert("Unable to delete this post.");
         }
     };
+    return(
+        <>
+        <Hero />
+        <main id="discover"
+        className="home-main">
+           < FeaturedPost post={posts[0]}/>
+           <section
+           className="discover-section">
+            <div className="section-heading">
+                <div>
+                    <span
+                    className="section-label">
+                        COMMUNITY STORIES
+                    </span>
+                    <h2> Discover student expriences</h2>
+                </div>
+                <searchBar 
+                searchTerm={searchTerm}
+                onSearch={setSearchTerm} />
+            </div>
+            
+           </section>
+
+        </main>
+    )
 }
