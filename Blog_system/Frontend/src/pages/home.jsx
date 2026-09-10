@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Loading from "../components/Loading";
 
 import {
@@ -14,21 +14,40 @@ function Home() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    useEffect(()=>{
-        async function loadPosts(){
-            try{
+    useEffect(() => {
+        async function loadPosts() {
+            try {
                 setLoading(true);
 
-                const data=await getPosts();
+                const data = await getPosts();
                 setPosts(data);
-            }catch(err){
+            } catch (err) {
                 setError("Unable to load stories.");
 
-            }finally{
+            } finally {
                 setLoading(false);
-                
+
             }
         }
         loadPosts();
+    }, []);
+
+    const filteredPosts = useMemo(() => {
+        return posts.filteer((post) => {
+
+            const matchesSearch =
+                post.title
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) ||
+
+                post.body
+                    .LowerCase()
+                    .includes(searchTerm.toLowerCase());
+            const category =
+                post.category || "Student Life";
+            const matchesCategory =
+                selectedCategory === "All" ||
+                category === selectedCategory;
+        })
     })
 }
