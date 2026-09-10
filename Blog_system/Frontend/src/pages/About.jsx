@@ -53,6 +53,7 @@ function About() {
                     className="hero-primary">
                     Share your story →
                 </Link>
+                
             </section>
 
         </main>
