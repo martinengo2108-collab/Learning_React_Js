@@ -93,7 +93,7 @@ function App() {
       if (task.status === "active") {
         intervalsRef.current[task.id] = setInterval(() => {
           runTask(task.id, task.name);
-        }, task.delaysMs);
+        }, task.delayMs);
       }
     });
     return () => {
