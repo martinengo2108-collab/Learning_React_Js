@@ -44,7 +44,18 @@ function About() {
                 </div>
 
             </section>
-            
+            <section
+                className="about-cta">
+                <h2>Have a story to tell?</h2>
+                <p>Your experience might be exactly what another student needs to hear.</p>
+                <Link
+                    to="/create"
+                    className="hero-primary">
+                    Share your story →
+                </Link>
+            </section>
+
         </main>
-    )
+    );
 }
+export default About;
