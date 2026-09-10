@@ -54,6 +54,13 @@ export async function updatePost(id, post) {
     return response.json();
 }
 export async function deletePost(id) {
-    const response=await fetch(`${API_URL}/${id}`)
+    const response=await fetch(`${API_URL}/${id}`,{
+        method:"DELETE",
+    });
+    if(!response.ok){
+        throw new Error("Failed to delete post");
+    }
+
+    return true;
     
 }
