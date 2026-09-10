@@ -7,3 +7,5 @@ function Loading(){
         </div>
     );
 }
+
+export default Loading;
