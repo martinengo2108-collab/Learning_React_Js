@@ -34,7 +34,22 @@ function Category(){
         className="section-label">
             EXPLORE
             </span>
+            <h1>Browse by category</h1>
+            <p>
+                Find stories from students with experiences similar to yours.
+            </p>
             </div>
+            <CategoryBar
+            selectedCategory={category}
+            onCategoryChange={setCategory}
+            />
+            {loading?(
+                <Loading/>
+            ):(
+                <PostList posts={filteredPosts}/>
+            )}
     </main>
-    )
+    );
 }
+
+export default Category;
