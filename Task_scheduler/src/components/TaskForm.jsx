@@ -4,7 +4,9 @@ export default function TaskForm({ onAddTask }) {
     const [taskName, setTaskname] = useState("");
 
     const [intervalTime, setIntervalTime] = useState("");
-    const [intervalUnit, setIntervalUnit] = useState("seconds")
+    const [intervalUnit, setIntervalUnit] = useState("seconds");
+
+    const [priority,setPriority]=useState("medium");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,11 +14,13 @@ export default function TaskForm({ onAddTask }) {
         if (!taskName.trim() || !intervalTime) return;
 
         onAddTask(taskName, parseInt(intervalTime, 10),
-        intervalUnit);
+        intervalUnit,
+    priority);
 
         setTaskname("");
         setIntervalTime("");
         setIntervalUnit("seconds");
+        setPriority("medium");
     };
     return (
         <form onSubmit={handleSubmit}

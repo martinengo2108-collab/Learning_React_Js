@@ -102,7 +102,7 @@ function App() {
     };
   }, [tasks]);
 
-  const addTask = (taskName, intervalTime, intervalUnit,priority) => {
+  const addTask = (taskName, intervalTime, intervalUnit, priority) => {
 
     const delayMs = convertToMilliSeconds(
       intervalTime,
@@ -141,7 +141,7 @@ function App() {
     );
     setLogs((currentLogs) => [...currentLogs, {
       timestamp: new Date().toLocaleTimeString(),
-      sender: "SYSTEM", 
+      sender: "SYSTEM",
       type: "warning",
       message: `Task "${name}" is now ${newStatus}.`
     }]);
