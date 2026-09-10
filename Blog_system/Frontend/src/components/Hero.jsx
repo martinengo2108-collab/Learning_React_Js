@@ -35,9 +35,16 @@ function Hero() {
                 </div>
 
                 <div className="floating-card card-two">
-                    
+                    🎓
+                    <span>Student life</span>
                 </div>
+                <div className="floating-card card-three">
+                     🚀
+                     <span>Inspire others</span>
+                </div>
+                <div className="hero-circle"></div>
+
             </div>
         </section>
-    )
+    );
 }
