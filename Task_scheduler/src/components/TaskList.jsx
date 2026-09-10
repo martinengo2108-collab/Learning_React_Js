@@ -1,6 +1,12 @@
 import React from "react"
 
 export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
+
+    const priorityBorder={
+        low:"border-l-[#A7F3DO]",
+        medium:"border-l-[#FCA5A5]",
+        high:"border-l-[#FCA5A5]"
+    }
     return (
         <div>
             <h3
