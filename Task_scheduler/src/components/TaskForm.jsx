@@ -23,8 +23,9 @@ export default function TaskForm({ onAddTask }) {
         setPriority("medium");
     };
     const priorityStyles={
-        low:"bg-[#A7F3DO] border-emerald-300 text-emeald-900"
-        
+        low:"bg-[#A7F3DO] border-emerald-300 text-emeald-900",
+        medium:"bg-[#FDE68A] border-amber-300 text-amber-900",
+        high:"bg-[#FCA5A5] border-red-300 text-red-900"
     }
     return (
         <form onSubmit={handleSubmit}
