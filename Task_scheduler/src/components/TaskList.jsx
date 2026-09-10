@@ -7,6 +7,12 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
         medium:"border-l-[#FCA5A5]",
         high:"border-l-[#FCA5A5]"
     }
+
+    const priorityBadge={
+        low:"bg-[#A7F3DO] text-emerald-900",
+        medium:"bg-[#FDE68A] text-amber-900",
+        high:"bg-[#FCA5A5] text-red-900"
+    };
     return (
         <div>
             <h3
