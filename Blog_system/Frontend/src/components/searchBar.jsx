@@ -19,3 +19,4 @@ function searchBar({ searchTerm, onSearch }) {
     );
 
 }
+export default searchBar;

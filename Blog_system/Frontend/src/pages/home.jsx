@@ -7,7 +7,7 @@ import {
 } from "../services/postservice";
 import PostList from "../components/postList";
 
-function Home() {
+function home() {
     const [posts, setPosts] = useState([]);
 
     const [searchTerm, setSearchTerm] = useState("");
@@ -112,3 +112,5 @@ function Home() {
             </>
             )
 }
+
+export default home;
