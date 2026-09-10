@@ -22,6 +22,10 @@ export default function TaskForm({ onAddTask }) {
         setIntervalUnit("seconds");
         setPriority("medium");
     };
+    const priorityStyles={
+        low:"bg-[#A7F3DO] border-emerald-300 text-emeald-900"
+        
+    }
     return (
         <form onSubmit={handleSubmit}
             className="space-y-4 mb-8">
