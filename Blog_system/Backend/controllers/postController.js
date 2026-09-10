@@ -5,6 +5,8 @@ import{
     updatePost,
     deletePost
 } from "../services/postServices.js";
-export async function getAllPosts(reqq,res){
-    
+export async function getAllPosts(req,res){
+    try{
+        const posts=await getPosts();
+    }
 }
