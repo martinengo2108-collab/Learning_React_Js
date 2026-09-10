@@ -5,6 +5,7 @@ import {
     getPosts,
     deletePost,
 } from "../services/postservice";
+import PostList from "../components/postList";
 
 function Home() {
     const [posts, setPosts] = useState([]);
@@ -65,33 +66,49 @@ function Home() {
             setPosts((currentPosts) =>
                 currentPosts.filter((post) =>
                     post.id !== id)
-        )}catch{
+            )
+        } catch {
             alert("Unable to delete this post.");
         }
     };
-    return(
+    return (
         <>
-        <Hero />
-        <main id="discover"
-        className="home-main">
-           < FeaturedPost post={posts[0]}/>
-           <section
-           className="discover-section">
-            <div className="section-heading">
-                <div>
-                    <span
-                    className="section-label">
-                        COMMUNITY STORIES
-                    </span>
-                    <h2> Discover student expriences</h2>
-                </div>
-                <searchBar 
-                searchTerm={searchTerm}
-                onSearch={setSearchTerm} />
-            </div>
-            
-           </section>
 
-        </main>
-    )
+            <Hero />
+            <main id="discover"
+                className="home-main">
+                < FeaturedPost post={posts[0]} />
+                <section
+                    className="discover-section">
+                    <div className="section-heading">
+                        <div>
+                            <span
+                                className="section-label">
+                                COMMUNITY STORIES
+                            </span>
+                            <h2> Discover student expriences</h2>
+                        </div>
+                        <searchBar
+                            searchTerm={searchTerm}
+                            onSearch={setSearchTerm} />
+                    </div>
+                    <Category
+                        selectedCategory={selectedCategory}
+                        onCategoryChange={setSelectedCategory} />
+                    {loading && <Loading />}
+                    {error&&(
+                        <div className="error-message">
+                            {error}
+                        </div>
+                    )}
+                    {!loading && !error&&(
+                        <PostList
+                        posts={filteredPosts}
+                        onDelete={handleDelete}/>
+                    )}
+                </section>
+
+            </main>
+            </>
+            )
 }
