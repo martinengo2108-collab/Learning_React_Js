@@ -25,5 +25,16 @@ function Category(){
     const filteredPosts=
     category==="All"?
     posts:
-    posts.filter()
+    posts.filter(
+        (post)=>(post.category||"Student life")===category
+    );
+    return(
+    <main className="page-container" >
+        <div className="page-header"><span
+        className="section-label">
+            EXPLORE
+            </span>
+            </div>
+    </main>
+    )
 }
