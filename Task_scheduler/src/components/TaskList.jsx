@@ -2,16 +2,16 @@ import React from "react"
 
 export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
 
-    const priorityBorder={
-        low:"border-l-[#A7F3DO]",
-        medium:"border-l-[#FCA5A5]",
-        high:"border-l-[#FCA5A5]"
+    const priorityBorder = {
+        low: "border-l-[#A7F3DO]",
+        medium: "border-l-[#FCA5A5]",
+        high: "border-l-[#FCA5A5]"
     }
 
-    const priorityBadge={
-        low:"bg-[#A7F3DO] text-emerald-900",
-        medium:"bg-[#FDE68A] text-amber-900",
-        high:"bg-[#FCA5A5] text-red-900"
+    const priorityBadge = {
+        low: "bg-[#A7F3DO] text-emerald-900",
+        medium: "bg-[#FDE68A] text-amber-900",
+        high: "bg-[#FCA5A5] text-red-900"
     };
     return (
         <div>
@@ -30,13 +30,21 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
                             priorityBorder[task.priority] || priorityBorder.medium}
                             border-y border-r border-slate-200 px-4 py-3 rounded-lg">
                             <div>
-                                <div className="flex items-center gap-2"></div>
-                                <p className="text-sm text-slate-900 font-medium">
-                                    {task.name}
-                                </p>
+                                <div className="flex items-center gap-2">
+                                    <p className="text-sm text-slate-900 font-medium">
+                                        {task.name}
+                                    </p>
+                                    <span
+                                        className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ${priorityBadge[task.priority] || priorityBadge.medium
+                                            }`}>
+                                        {task.priority || "medium"}
+
+                                    </span>
+                                </div>
                                 <span
                                     className="text-xs text-slate-400"> Runs every {task.interval} {task.unit}
                                 </span>
+
                             </div>
                             <div className="flex items-center gap-2">
                                 <button
