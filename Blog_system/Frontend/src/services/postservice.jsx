@@ -1,6 +1,12 @@
-const API_URL="https://jsonplaceholder.typicode.com/posts"
+const API_URL = "https://jsonplaceholder.typicode.com/posts"
 
-export async function getPosts(){
-    
+export async function getPosts() {
+    const response = await fetch(API_URL);
+
+    if(!response.ok){
+        throw new Error("Failed to fetch posts");
+    }
+
+    return response.json();
 
 }
