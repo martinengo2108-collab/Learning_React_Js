@@ -18,3 +18,4 @@ function PostList({posts,onDelete}){
         </div>
     )
 }
+export default PostList;
