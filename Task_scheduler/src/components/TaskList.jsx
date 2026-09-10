@@ -21,13 +21,16 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
 
             </h3>
             {tasks.length === 0 ? (<p
-                className="text-sm text-slate-500 italic"
+                className="text-sm text-slate-400 italic"
             >No task yet - add one above to get started</p>) : (
                 <div className="space-y-2 max-h-64 overflow-y-auto pr-1" >
                     {tasks.map((task) => (
                         <div
-                            key={task.id} className="flex justify-between items-center bg-slate-50 border-l-4 border-blue-600 border-y border-r border-slate-200 px-4 py-3 rounded-lg ">
+                            key={task.id} className="flex justify-between items-center bg-slate-50 border-l-4 ${
+                            priorityBorder[task.priority] || priorityBorder.medium}
+                            border-y border-r border-slate-200 px-4 py-3 rounded-lg">
                             <div>
+                                <div className="flex items-center gap-2"></div>
                                 <p className="text-sm text-slate-900 font-medium">
                                     {task.name}
                                 </p>
