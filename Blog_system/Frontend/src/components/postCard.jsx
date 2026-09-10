@@ -24,6 +24,23 @@ function postCard({ post, onDelete }) {
                 <span className="author">
                     By Student
                 </span>
+                <div className="post-actions">
+                    <Link to={`/posts/${post.id}`}
+                        className="read-more">
+                        Read →
+                    </Link>
+                    <Link
+                        to={`/edit/${post.id}`} className="edit-link">
+                        Edit
+                    </Link>
+                    {onDelete && (
+                        <button
+                            className="delete-button"
+                            onClick={() => onDelete(post.id)}>
+                            Delete
+                        </button>
+                    )}
+                </div>
             </div>
 
         </article>
