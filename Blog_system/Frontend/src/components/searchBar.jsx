@@ -1,10 +1,21 @@
-function searchBar({searchTerm,onSearch}){
+function searchBar({ searchTerm, onSearch }) {
 
-    return(
+    return (
         <div className="search-container">
             <span
-            className="search-icon">⌕</span>
+                className="search-icon">⌕</span>
+            <input type="text"
+                placeholder="Search stories,experiences..."
+                value={searchTerm}
+                onChange={(e) => onSearch(e.target.value)} />
+            {searchTerm && (
+                <button
+                    className="clear-search"
+                    onClick={()=>onSearch("")}>
+                        x
+                </button>
+            )}
         </div>
-    )
+    );
 
 }
