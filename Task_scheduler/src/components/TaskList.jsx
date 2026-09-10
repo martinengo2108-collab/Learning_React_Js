@@ -58,7 +58,8 @@ export default function TaskList({ tasks, onToggleStatus, onDeleteTask }) {
                                         if (window.confirm(`Delete task "${task.name}" ?`)) {
                                             onDeleteTask(task.id, task.name);
                                         }
-                                    }}>Delete</button>
+                                    }}
+                                    className="text-xs px-3 pu-1.5 font-medium rounded-md transition border-2 bg-red-50 hover:bg-red-100 text-red-600 border-red-300">Delete</button>
                             </div>
 
 
