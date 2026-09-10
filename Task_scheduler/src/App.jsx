@@ -102,7 +102,7 @@ function App() {
     };
   }, [tasks]);
 
-  const addTask = (taskName, intervalTime, intervalUnit) => {
+  const addTask = (taskName, intervalTime, intervalUnit,priority) => {
 
     const delayMs = convertToMilliSeconds(
       intervalTime,
@@ -114,7 +114,8 @@ function App() {
       interval: intervalTime,
       unit: intervalUnit,
       delayMs,
-      status: "active"
+      status: "active",
+      priority
     };
 
     setTasks((currentTasks) => [...currentTasks, newTask]);
