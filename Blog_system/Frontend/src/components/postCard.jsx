@@ -44,5 +44,7 @@ function postCard({ post, onDelete }) {
             </div>
 
         </article>
-    )
+    );
 }
+
+export default postCard;
