@@ -141,7 +141,8 @@ function App() {
     );
     setLogs((currentLogs) => [...currentLogs, {
       timestamp: new Date().toLocaleTimeString(),
-      sender: "SYSTEM", type: "warning",
+      sender: "SYSTEM", 
+      type: "warning",
       message: `Task "${name}" is now ${newStatus}.`
     }]);
   };
@@ -166,10 +167,10 @@ function App() {
   return (
 
 
-    <div className="min-h-screen bg-white text-slate-800">
+    <div className="min-h-screen bg-[#FAFAFA] text-slate-800">
       <div className="max-w-4xl mx-auto px-6 py-10">
-        <header className="mb-8 border-b-4 border-blue-600 pb-4">
-          <h1 className="text-sm text-slate-500 mt-1">Task Scheduler</h1>
+        <header className="mb-8 border-b-4 border-[#8B5CF6] pb-4">
+          <h1 className="text-2xl font-bold text-slate-500 ">Task Scheduler</h1>
           <p className="text-sm text-slate-500 mt-1">
             Register recurring jobs and watch tem run.
           </p>
