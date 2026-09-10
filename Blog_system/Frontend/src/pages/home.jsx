@@ -48,6 +48,25 @@ function Home() {
             const matchesCategory =
                 selectedCategory === "All" ||
                 category === selectedCategory;
-        })
-    })
+
+            return matchesSearch && matchesCategory;
+        });
+    }, [posts, searchTerm, selectedCategory]);
+
+    const handleDelete = async (id) => {
+        const confirmed = window.confirm(
+            "Are you sure you want to delete this history"
+        );
+        if (!confirmed) return;
+
+        try {
+            await deletePost(id);
+
+            setPosts((currentPosts) =>
+                currentPosts.filter((post) =>
+                    post.id !== id)
+        )}catch{
+            alert("Unable to delete this post.");
+        }
+    };
 }
