@@ -53,7 +53,16 @@ function postForm({
                 <label>
                     Category
                 </label>
-                <select name="" id=""></select>
+                <select 
+                value={category}
+                onChange={(e)=>setCategory(e.target.value)}>
+                    <option >Academics</option>
+                    <option >Campus Life</option>
+                    <option>Technology</option>
+                    <option >Career</option>
+                    <option >Personal Growth</option>
+                    <option>Internship</option>
+                </select>
 
             </div>
         </form>
