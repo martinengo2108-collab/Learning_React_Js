@@ -81,5 +81,6 @@ function postForm({
                 {submitText} →
             </button>
         </form>
-    )
+    );
 }
+export default postForm;
