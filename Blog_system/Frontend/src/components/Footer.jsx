@@ -32,7 +32,12 @@ function Footer(){
                 </div>
 
             </div>
+            <div className="footer-bottom">
+                <p>© 2026 StudentSphere. Built for student voices</p>
+            </div>
         </footer>
-    )
+    );
 
 }
+
+export default Footer;
