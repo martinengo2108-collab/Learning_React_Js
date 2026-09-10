@@ -26,12 +26,12 @@ export default function TaskForm({ onAddTask }) {
         low:"bg-[#A7F3DO] border-emerald-300 text-emeald-900",
         medium:"bg-[#FDE68A] border-amber-300 text-amber-900",
         high:"bg-[#FCA5A5] border-red-300 text-red-900"
-    }
+    };
     return (
         <form onSubmit={handleSubmit}
             className="space-y-4 mb-8">
             <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                <label className="block text-xs font-semibold text-slate-500 mb-2">
                     Task Name
                 </label>
                 <input type="text"
@@ -39,7 +39,7 @@ export default function TaskForm({ onAddTask }) {
                     value={taskName}
                     onChange={(e) => setTaskname(e.target.value)}
 
-                    className="w-full bg-white border-2 border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 transition"
+                    className="w-full bg-white border-2 border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#8B5CF6] transition"
                     required
                 />
             </div>
@@ -55,12 +55,12 @@ export default function TaskForm({ onAddTask }) {
                         placeholder="30"
                         value={intervalTime}
                         onChange={(e) => setIntervalTime(e.target.value)}
-                        className="w-full bg-white border-2 border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 transition"
+                        className="w-full bg-white border-2 border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#8B5CF6] transition"
                         required />
 
                     <select value={intervalUnit}
                         onChange={(e) => setIntervalUnit(e.target.value)}
-                        className="bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 transition">
+                        className="bg-[white] border-2 border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:border-[#8B5CF6] transition">
                         <option value="seconds">Seconds</option>
                         <option value="minutes">Minutes</option>
                         <option value="hours">Hours</option>
@@ -68,6 +68,10 @@ export default function TaskForm({ onAddTask }) {
                         <option value="weeks">Weeks</option>
                     </select>
                 </div>
+            </div>
+            <div>
+                <label 
+                className="blocjk text-xs font-semibold text-slate-500 mb-2"></label>
             </div>
 
             <button type="submit"
