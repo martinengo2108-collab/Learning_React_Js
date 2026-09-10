@@ -6,7 +6,7 @@ export default function TaskForm({ onAddTask }) {
     const [intervalTime, setIntervalTime] = useState("");
     const [intervalUnit, setIntervalUnit] = useState("seconds");
 
-    const [priority,setPriority]=useState("medium");
+    const [priority, setPriority] = useState("medium");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,18 +14,18 @@ export default function TaskForm({ onAddTask }) {
         if (!taskName.trim() || !intervalTime) return;
 
         onAddTask(taskName, parseInt(intervalTime, 10),
-        intervalUnit,
-    priority);
+            intervalUnit,
+            priority);
 
         setTaskname("");
         setIntervalTime("");
         setIntervalUnit("seconds");
         setPriority("medium");
     };
-    const priorityStyles={
-        low:"bg-[#A7F3DO] border-emerald-300 text-emeald-900",
-        medium:"bg-[#FDE68A] border-amber-300 text-amber-900",
-        high:"bg-[#FCA5A5] border-red-300 text-red-900"
+    const priorityStyles = {
+        low: "bg-[#A7F3DO] border-emerald-300 text-emeald-900",
+        medium: "bg-[#FDE68A] border-amber-300 text-amber-900",
+        high: "bg-[#FCA5A5] border-red-300 text-red-900"
     };
     return (
         <form onSubmit={handleSubmit}
@@ -70,8 +70,21 @@ export default function TaskForm({ onAddTask }) {
                 </div>
             </div>
             <div>
-                <label 
-                className="blocjk text-xs font-semibold text-slate-500 mb-2"></label>
+                <label
+                    className="block text-xs font-semibold text-slate-500 mb-2">
+                    Priority
+                </label>
+                <div className="flex gap-2">
+                    {["low", "medium", "high"].map((level) => (
+                        <button
+                            key={level}
+                            type="button"
+                            onClick={() =>setPriority}>
+
+
+                        </button>
+                    ))}
+                </div>
             </div>
 
             <button type="submit"
