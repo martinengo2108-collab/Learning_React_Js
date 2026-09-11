@@ -10,4 +10,19 @@ function PostDetails() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
+    useEffect(()=>{
+        async function loadPost(){
+            try{
+                const data=await getPost(id);
+
+                setPost(data);
+            }catch{
+                setError("This story could not be found.")
+            }finally{
+                setLoading(false);
+            }
+        }
+        loadPost();
+    },[id]);
+
 }
