@@ -50,3 +50,5 @@ function CreatePost() {
         </main>
     );
 }
+
+export default CreatePost;
