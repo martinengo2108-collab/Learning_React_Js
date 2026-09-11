@@ -37,4 +37,46 @@ function EditPost() {
         loadPost()
     },[id]);
 
+    const handleUpdate=async (updatedPost)=>{
+        try{
+            const data=await updatePost(id,updatedPost);
+
+            navigate(`/posts/${data.id}`);
+        }catch{
+            alert("Unable to updatee this story.");
+        }
+    };
+    if(loading){
+        return<Loading />
+    }
+    if(!post){
+        return 
+        <p>Story not found.</p>
+    }
+
+    return(
+
+        <main
+        className="form-page">
+            <div className="form-header">
+                <span
+                className="section-label">
+                    EDIT STORY
+                </span>
+                <h1>
+                    Update your story
+                </h1>
+
+                <p>
+                    Make changes to your experiences before publishing it again
+                </p>
+            </div>
+            <PostForm
+            
+            />
+        </main>
+    );
+
 }
+
+export default EditPost;
