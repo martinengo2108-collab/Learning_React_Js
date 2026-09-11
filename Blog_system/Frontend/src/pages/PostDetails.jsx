@@ -52,10 +52,31 @@ function PostDetails() {
                     <h1>{post.category || "Student life"}</h1>
                 </span>
                 <h1>{post.title}</h1>
-                
+                <div className="post-meta">
+                    <span>By Student</span>
+
+                    <span>•</span>
+
+                    <span>Story #{post.id}</span>
+                </div>
+                <div className="post-body">
+                    <p>{post.body}</p>
+
+                    <p>
+                        Student experiences are different for everyone.
+                        Sharing these experiences helps create a stronger and more connected community
+                    </p>
+                </div>
+                <div className="details-actions">
+                    <Link
+                    to={`/edit/${post.id}`}
+                    className="hero-primary">
+                        Edit story
+                    </Link>
+                </div>
 
             </article>
         </main>
-    )
+    );
 
 }
