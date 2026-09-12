@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,7 +10,7 @@ import CreatePost from "./pages/createPost";
 import EditPost from "./pages/EditPost";
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,7 +22,7 @@ function App() {
         
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 export default App;
