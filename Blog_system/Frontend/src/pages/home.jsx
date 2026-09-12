@@ -1,13 +1,16 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Loading from "../components/Loading";
 
+import PostList from "../components/postList";
+import CategoryBar from "../components/CategoryBar";
+import SearchBar from "../components/searchBar";
+import FeaturedPost from "../components/FeaturedPost";
 import {
     getPosts,
     deletePost,
 } from "../services/postservice";
-import PostList from "../components/postList";
 
-function home() {
+function Home() {
     const [posts, setPosts] = useState([]);
 
     const [searchTerm, setSearchTerm] = useState("");
@@ -34,7 +37,7 @@ function home() {
     }, []);
 
     const filteredPosts = useMemo(() => {
-        return posts.filteer((post) => {
+        return posts.filter((post) => {
 
             const matchesSearch =
                 post.title
@@ -42,7 +45,7 @@ function home() {
                     .includes(searchTerm.toLowerCase()) ||
 
                 post.body
-                    .LowerCase()
+                    .toLowerCase()
                     .includes(searchTerm.toLowerCase());
             const category =
                 post.category || "Student Life";
@@ -96,21 +99,21 @@ function home() {
                         selectedCategory={selectedCategory}
                         onCategoryChange={setSelectedCategory} />
                     {loading && <Loading />}
-                    {error&&(
+                    {error && (
                         <div className="error-message">
                             {error}
                         </div>
                     )}
-                    {!loading && !error&&(
+                    {!loading && !error && (
                         <PostList
-                        posts={filteredPosts}
-                        onDelete={handleDelete}/>
+                            posts={filteredPosts}
+                            onDelete={handleDelete} />
                     )}
                 </section>
 
             </main>
-            </>
-            )
+        </>
+    )
 }
 
-export default home;
+export default Home;
