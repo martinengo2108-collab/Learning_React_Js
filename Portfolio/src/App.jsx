@@ -8,6 +8,7 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <>
@@ -18,7 +19,7 @@ function App() {
           ? "opacity-100"
           : "opacity-0"}bg-black text-gray-100`} >
 
-        <Navbar />
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       </div >
 
