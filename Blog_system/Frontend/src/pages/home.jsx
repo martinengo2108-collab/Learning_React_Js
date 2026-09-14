@@ -93,7 +93,7 @@ function Home() {
                             </span>
                             <h2> Discover student expriences</h2>
                         </div>
-                        <searchBar
+                        <SearchBar
                             searchTerm={searchTerm}
                             onSearch={setSearchTerm} />
                     </div>

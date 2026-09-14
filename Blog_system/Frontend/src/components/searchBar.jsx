@@ -1,4 +1,4 @@
-function searchBar({ searchTerm, onSearch }) {
+function SearchBar({ searchTerm, onSearch }) {
 
     return (
         <div className="search-container">
@@ -19,4 +19,4 @@ function searchBar({ searchTerm, onSearch }) {
     );
 
 }
-export default searchBar;
+export default SearchBar;

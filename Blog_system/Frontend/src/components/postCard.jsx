@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 function postCard({ post, onDelete }) {
-    const category = post.category || "Studennt Life";
+    const category = post.category || "Student Life";
     return (
         <article className="post-card">
 
@@ -12,7 +12,7 @@ function postCard({ post, onDelete }) {
                 </span>
                 <span
                     className="post-number">
-                    #{post.id}
+                    No {post.id}
                 </span>
             </div>
             <h3>{post.title}</h3>
