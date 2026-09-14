@@ -5,6 +5,8 @@ import PostList from "../components/postList";
 import CategoryBar from "../components/CategoryBar";
 import SearchBar from "../components/searchBar";
 import FeaturedPost from "../components/FeaturedPost";
+
+import Hero from "../components/Hero";
 import {
     getPosts,
     deletePost,
@@ -95,7 +97,7 @@ function Home() {
                             searchTerm={searchTerm}
                             onSearch={setSearchTerm} />
                     </div>
-                    <Category
+                    <CategoryBar
                         selectedCategory={selectedCategory}
                         onCategoryChange={setSelectedCategory} />
                     {loading && <Loading />}

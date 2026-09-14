@@ -6,7 +6,7 @@ function CategoryBar({ selectedCategory, onCategoryChange }) {
         "Technology",
         "Career",
         "Personal Growth",
-        "internship",
+        "Internship",
     ];
     return (
         <div className="category-wrapper">
@@ -14,6 +14,7 @@ function CategoryBar({ selectedCategory, onCategoryChange }) {
                 {categories.map((category)=>(
                 <button
                     key={category}
+                    type="button"
                     className={
                         selectedCategory === category?
                         "category-button active":"category-button"
