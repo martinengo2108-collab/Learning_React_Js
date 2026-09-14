@@ -13,11 +13,12 @@ export const LoadingScreen = () => {
             setText(fullText, substring(0, index));
             index++;
 
-            if (index > fullText.length){
-                
+            if (index > fullText.length) {
+                clearInterval(interval)
             }
-        
-        })
+
+        }, 100)
+        return () => clearInterval(interval);
     })
 
     return <div className="fixed inset-0  z-50 bg-black text-grey-100 flex flex-col items-center justify-center">
