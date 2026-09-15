@@ -1,4 +1,11 @@
 export const About = () => {
+
+    const frontendSkills = ["React",
+        "Vue",
+        "TypeScript",
+        "Tailwindcss",
+        "Svelte",
+    ]
     return
     <section id="about" className="min-h-screen flex items-center justify-center py-20">
 
@@ -19,7 +26,7 @@ export const About = () => {
                     <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
 
                         <h3 className="text-xl font-bold mb-4">Frontend</h3>
-                        
+
                         <div className="flex flex-wrap gap-2"></div>
                     </div>
                 </div>
