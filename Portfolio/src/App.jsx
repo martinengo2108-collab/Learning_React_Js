@@ -4,6 +4,7 @@ import "./index.css";
 import { Home } from './components/sections/Home';
 import { Navbar } from "./components/Navbar"
 import { MobileMenu } from './components/MobileMoney';
+import { About } from './components/sections/About';
 
 import viteLogo from './assets/vite.svg'
 import './App.css'
@@ -22,8 +23,9 @@ function App() {
           : "opacity-0"}bg-black text-gray-100`} >
 
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        
+
         <Home />
 
         <About />
