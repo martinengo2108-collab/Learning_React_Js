@@ -8,7 +8,7 @@ export const About = () => {
                 About Me
 
             </h2>
-            <div>
+            <div className="glass rounded-xl p-8 border-white/10 border hover:">
 
                 <p>
                     I am a beginner in front-end developer passionate of crafting smart and scalable web
