@@ -6,11 +6,11 @@ import { Navbar } from "./components/Navbar"
 import { MobileMenu } from './components/MobileMoney';
 import { About } from './components/sections/About';
 
-import viteLogo from './assets/vite.svg'
+import viteLogo from "./assets/vite.svg";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
