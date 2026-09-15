@@ -67,8 +67,20 @@ export const About = () => {
                     <div className="space-y-4 text-gray-300">
                         <div>
                             <h4>
-                                
+                                Student at .....(2024-Present)
                             </h4>
+                            <p>
+                                Coordinated school mini projects....
+                            </p>
+                        </div>
+
+                         <div>
+                            <h4>
+                                Intern at TiC Foundation
+                            </h4>
+                            <p>
+                                Learning web development,Assisted in ...
+                            </p>
                         </div>
                     </div>
                     </div>
