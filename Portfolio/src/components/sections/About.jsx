@@ -1,5 +1,5 @@
-export const  About =()=>{
-    return 
+export const About = () => {
+    return
     <section id="about" className="min-h-screen flex items-center justify-center py-20">
 
         <div className="max-w-3xl mx-about px-4">
@@ -8,6 +8,13 @@ export const  About =()=>{
                 About Me
 
             </h2>
+            <div>
+
+                <p>
+                    I am a beginner in front-end developer passionate of crafting smart and scalable web
+                    pages. My goal is to become a full stack developer, offering
+                </p>
+            </div>
 
         </div>
 
