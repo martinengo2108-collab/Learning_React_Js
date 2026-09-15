@@ -17,20 +17,27 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                     &times;
                 </button>
                 
-                     <a href="#home" className="text-gray-300 hover:text-white transition-colors">
+                     <a href="#home" 
+                     onClick={()=> setMenuOpen(false)}
+                     className="text-gray-300 hover:text-white transition-colors">
                        
                         Home
                     </a>
                     <a
-                        href="#about" className="text-gray-300 hover:text-white transition-colors">
+                        href="#about"
+                        onClick={()=> setMenuOpen(false)}
+                         className="text-gray-300 hover:text-white transition-colors">
                         
                         About
                     </a>
-                    <a href="#" projects className="text-gray-300 hover:text-white transition-colors">
+                    <a href="#projects"
+                    onClick={()=> setMenuOpen(false)}
+                     className="text-gray-300 hover:text-white transition-colors">
                         Projects
                     </a>
                     <a
                         href="#contacts"
+                        onClick={()=> setMenuOpen(false)}
                         className="text-gray-300 hover:text-white transition-colors">
                         
                         Contacts
