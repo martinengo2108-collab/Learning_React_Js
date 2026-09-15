@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { LoadingScreen } from './components/LoadingScreen';
 import "./index.css";
 import { Navbar } from "./components/Navbar"
+import { MobileMenu } from './components/MobileMoney';
 
 import viteLogo from './assets/vite.svg'
 import './App.css'
