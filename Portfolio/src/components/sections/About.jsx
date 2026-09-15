@@ -37,13 +37,40 @@ export const About = () => {
                                 {frontendSkills.map((tech) => (
 
                                     <span className="bg-blue-500/10 text-blue py-1 px-3 rounded-full text-sm hover:bg-blue-500/20
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)">
-
+                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2) transition">
+                                            {tech}
                                     </span>
 
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+                    <h3 className="text-xl font-bold mb-4">
+                       🏫 Education
+                    </h3>
+                    <ul className="list-disc list-inside text-gray-300 space-y-2">
+                        <li>
+                            <strong>
+                                GCE Advanced Level
+                            </strong>
+                        </li>
+                    </ul>
+                    </div>
+                    <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
+                    <h3 className="text-xl font-bold mb-4">
+                       🏫 Experience
+                    </h3>
+                    <div className="space-y-4 text-gray-300">
+                        <div>
+                            <h4>
+                                
+                            </h4>
+                        </div>
+                    </div>
                     </div>
                 </div>
 
