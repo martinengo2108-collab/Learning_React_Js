@@ -5,6 +5,7 @@ import { Home } from './components/sections/Home';
 import { Navbar } from "./components/Navbar"
 import { MobileMenu } from './components/MobileMoney';
 import { About } from './components/sections/About';
+import { Projects } from './components/sections/Project';
 
 import viteLogo from "./assets/vite.svg";
 import './App.css'
@@ -29,6 +30,8 @@ function App() {
         <Home />
 
         <About />
+        <Projects />
+
 
       </div >
 
