@@ -16,7 +16,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
 
                 <a href="#home" className="font-mono text-xl font-bold text-white">
                     {" "}
-                    Martine <span className="text-blue-500">.tech</span>
+                    Martine<span className="text-blue-500">.tech</span>
                     {" "}
                 </a>
 
