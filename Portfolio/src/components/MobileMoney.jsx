@@ -11,40 +11,52 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             }
             `}>
 
-                <button onClick={()=> setMenuOpen(false)} 
+            <button onClick={() => setMenuOpen(false)}
                 className="absolute top-6 right-6 text-white text-3xl focus:outline-none  cursor-pointer"
                 aria-label="Close Menu">
-                    &times;
-                </button>
-                
-                     <a href="#home" 
-                     onClick={()=> setMenuOpen(false)}
-                     className="text-gray-300 hover:text-white transition-colors">
-                       
-                        Home
-                    </a>
-                    <a
-                        href="#about"
-                        onClick={()=> setMenuOpen(false)}
-                         className="text-gray-300 hover:text-white transition-colors">
-                        
-                        About
-                    </a>
-                    <a href="#projects"
-                    onClick={()=> setMenuOpen(false)}
-                     className="text-gray-300 hover:text-white transition-colors">
-                        Projects
-                    </a>
-                    <a
-                        href="#contacts"
-                        onClick={()=> setMenuOpen(false)}
-                        className="text-gray-300 hover:text-white transition-colors">
-                        
-                        Contacts
-                    </a>
-            
+                &times;
+            </button>
 
-            </div>
+            <a href="#home"
+                onClick={() => setMenuOpen(false)}
+                className={`text-2xl font-semobold text-white my-4 transform transition-transform
+                     duration-300 ${menuOpen
+                        ? "opacity-100 translate-y-0" : "opacity-0 tanslate-y-5"
+                    }`}>
+
+                Home
+            </a>
+            <a
+                href="#about"
+                onClick={() => setMenuOpen(false)}
+                className={`text-2xl font-semobold text-white my-4 transform transition-transform
+                     duration-300 ${menuOpen
+                        ? "opacity-100 translate-y-0" : "opacity-0 tanslate-y-5"
+                    }`}>
+
+                About
+            </a>
+            <a href="#projects"
+                onClick={() => setMenuOpen(false)}
+                className={`text-2xl font-semobold text-white my-4 transform transition-transform
+                     duration-300 ${menuOpen
+                        ? "opacity-100 translate-y-0" : "opacity-0 tanslate-y-5"
+                    }`}>
+                Projects
+            </a>
+            <a
+                href="#contacts"
+                onClick={() => setMenuOpen(false)}
+                className={`text-2xl font-semobold text-white my-4 transform transition-transform
+                     duration-300 ${menuOpen
+                        ? "opacity-100 translate-y-0" : "opacity-0 tanslate-y-5"
+                    }`}>
+
+                Contacts
+            </a>
+
+
+        </div>
 
     );
 }
