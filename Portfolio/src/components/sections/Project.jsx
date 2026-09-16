@@ -28,8 +28,10 @@ export const Projects = () => {
                                 </span>
                             })}
                         </div>
-                        <div>
-                            <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">
+                        <div
+                        className="flex justify-between items-center">
+                            <a 
+                            href="#" className="text-blue-400 hover:text-blue-300 transition-colors my-4">
                                 {" "}
                                 View Projects {" "}</a>
                         </div>
