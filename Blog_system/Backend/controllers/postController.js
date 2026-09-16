@@ -29,6 +29,21 @@ export function getPost(req, res) {
 
         res.json(post);
     } catch (error) {
+        res.status(500).json({
+            message: "Failed to fetch post",
+        })
 
+    }
+}
+
+export function addPost(req, res) {
+    try {
+        const { title, body, category, author } = req.body;
+
+        if (!title || !body || !category || !author) {
+            return res.status(400).json({
+                message: "Title,body,category,and author are required",
+            })
+        }
     }
 }
