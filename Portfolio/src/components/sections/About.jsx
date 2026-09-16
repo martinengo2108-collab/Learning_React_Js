@@ -1,4 +1,4 @@
-import { RevealOnScroll } from "../RevealOnScroll";
+import  RevealOnScroll  from "../RevealOnScroll";
 
 export const About = () => {
 
@@ -18,7 +18,7 @@ export const About = () => {
 
             <RevealOnScroll>
                 <div className="max-w-3xl mx-about px-4">
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
                         {" "}
                         About Me{" "}
 
