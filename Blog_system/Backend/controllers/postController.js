@@ -55,7 +55,27 @@ export function addPost(req, res) {
         res.status(201).json(newPost);
     } catch (error) {
         res.status(500).json({
-            message:"Failed to create post",
+            message: "Failed to create post",
+        })
+    }
+}
+export function updatePost(req, res) {
+    try {
+        const {
+            title, body, category, author
+        } = req.body;
+        if (!title || !body || !category || !author) {
+            return res.status(400).json({
+                message: "Tite,body,category,and author are required"
+            });
+
+        }
+
+        const updatePost=updatePostById(req.params.id,{
+            title,
+            body,
+            category,
+            author,
         })
     }
 }
