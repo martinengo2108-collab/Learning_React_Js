@@ -45,5 +45,17 @@ export function addPost(req, res) {
                 message: "Title,body,category,and author are required",
             })
         }
+
+        const newPost = createPost({
+            title,
+            body,
+            category, author
+        });
+
+        res.status(201).json(newPost);
+    } catch (error) {
+        res.status(500).json({
+            message:"Failed to create post",
+        })
     }
 }
