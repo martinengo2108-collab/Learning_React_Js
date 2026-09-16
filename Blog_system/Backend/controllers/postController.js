@@ -1,12 +1,18 @@
 import{
-    getPosts,
+    getAllPosts,
     getPostById,
     createPost,
-    updatePost,
-    deletePost
+    updatePostById,
+    deletePostByid,
 } from "../services/postServices.js";
-export async function getAllPosts(req,res){
+export function getPosts(req,res){
     try{
-        const posts=await getPosts();
+        const posts= getAllPosts();
+        res.json(posts);
+    } catch(error){
+        res.status(500).json({
+
+            message:"Failed to fetch posts",
+        })
     }
 }
