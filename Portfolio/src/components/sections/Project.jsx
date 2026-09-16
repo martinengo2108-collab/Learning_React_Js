@@ -8,6 +8,16 @@ export const Projects = () => {
 
                {" "}
             </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3>
+                        Cloud Platform
+                    </h3>
+                    <p>
+                        scelhifhei
+                    </p>
+                </div>
+            </div>
 
         </div>
 
