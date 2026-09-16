@@ -19,12 +19,16 @@ export function getPosts(req, res) {
 
 export function getPost(req, res) {
     try {
-        const post=getPostById(req.params.id);
+        const post = getPostById(req.params.id);
 
-        if(!post){
+        if (!post) {
             return res.status(404).json({
-                message:"Post not found",
-            })
+                message: "Post not found",
+            });
         }
+
+        res.json(post);
+    } catch (error) {
+
     }
 }
