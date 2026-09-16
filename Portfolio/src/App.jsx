@@ -9,6 +9,7 @@ import { Projects } from './components/sections/Project';
 
 import viteLogo from "./assets/vite.svg";
 import './App.css'
+import { Contact } from './components/sections/Contact';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -31,6 +32,7 @@ function App() {
 
         <About />
         <Projects />
+        <Contact />
 
 
       </div >
