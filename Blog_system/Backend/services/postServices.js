@@ -16,6 +16,7 @@ export async function createPost(postData) {
         method: "POST",
 
         headers: {
+
             "Content-type": "application/json"
         },
         body: JSON.stringify(postData)
@@ -29,7 +30,9 @@ export async function createPost(postData) {
 export async function updatePost(id, postData) {
 
     const response = await fetch(`${API_URL}/${id}`, {
+
         method: "PUT",
+
         headers: {
             "Content-Type": "application/json"
         },
@@ -37,7 +40,7 @@ export async function updatePost(id, postData) {
     });
 
     if (!response.ok) {
-        throw new Error("Failed to delete post");
+        throw new Error("Failed to update post");
     }
     return response.json();
 
@@ -46,6 +49,7 @@ export async function updatePost(id, postData) {
 export async function deletePost(id) {
 
     const response = await fetch(`${API_URL}/{id}`, {
+        
         method: "DELETE",
     });
 
