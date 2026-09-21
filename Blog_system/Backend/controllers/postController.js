@@ -86,7 +86,7 @@ export function updatePost(req, res) {
 
         }
 
-        const updatePost = updatePostById(req.params.id,
+        const updatedPost = updatePostById(req.params.id,
             {
                 title,
                 body,
@@ -94,13 +94,13 @@ export function updatePost(req, res) {
                 author,
             });
 
-        if (!updatePost) {
+        if (!updatedPost) {
             return res.status(404).json({
                 message: "Post not found"
             });
 
         }
-        res.json(updatePost);
+        res.json(updatedPost);
     } catch (error) {
         console.error(error);
 
