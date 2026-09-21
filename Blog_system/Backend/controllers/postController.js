@@ -49,7 +49,7 @@ export function addPost(req, res) {
 
         if (!title || !body || !category || !author) {
             return res.status(400).json({
-                message: "Title,body,category,and author are required",
+                message: "Title ,body , category, and author are required",
             })
         }
 
@@ -81,7 +81,7 @@ export function updatePost(req, res) {
         } = req.body;
         if (!title || !body || !category || !author) {
             return res.status(400).json({
-                message: "Tite,body,category,and author are required"
+                message: "Title, body, category, and author are required"
             });
 
         }

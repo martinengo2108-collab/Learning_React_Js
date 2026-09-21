@@ -1,4 +1,4 @@
-const API_URL = "https://localhost:5000/api/posts";
+const API_URL = "http://localhost:5000/api/posts";
 
 export async function getPosts() {
     const response = await fetch(API_URL);
@@ -48,7 +48,7 @@ export async function updatePost(id, postData) {
 
 export async function deletePost(id) {
 
-    const response = await fetch(`${API_URL}/{id}`, {
+    const response = await fetch(`${API_URL}/${id}`, {
 
         method: "DELETE",
     });
