@@ -103,9 +103,32 @@ export function updatePost(req, res) {
         res.json(updatePost);
     } catch (error) {
         console.error(error);
-        
+
         res.status(500).json({
             message: "Failed to update post"
+        });
+    }
+}
+
+export function deletePost(req, res) {
+    try {
+
+        const deletedPost = deletePostByid(req.params.id);
+        if (!deletedPost) {
+
+            return res.status(404).json({
+                message: "Post not found",
+            });
+        }
+        res.json({
+            message: "Post deleted sucessfully",
+            post: deletedPost,
+        });
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            message: "Failed to delete post",
         });
     }
 }
