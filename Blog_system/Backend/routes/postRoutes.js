@@ -1,9 +1,11 @@
 import express from "express";
 
-import{
+import {
     getPosts,
     getPostById,
     createPost,
     updatePost,
     deletePost
-}from"../controllers/postController.js";
+} from "../controllers/postController.js";
+
+const router = express.Router();
