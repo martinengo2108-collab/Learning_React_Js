@@ -57,23 +57,27 @@ export function addPost(req, res) {
             title,
             body,
             category,
-             author,
+            author,
         });
 
         res.status(201).json(newPost);
     } catch (error) {
 
         console.error(error);
-        
+
         res.status(500).json({
             message: "Failed to create post",
         })
     }
 }
+
 export function updatePost(req, res) {
     try {
         const {
-            title, body, category, author
+            title,
+            body,
+            category,
+            author,
         } = req.body;
         if (!title || !body || !category || !author) {
             return res.status(400).json({
@@ -82,22 +86,24 @@ export function updatePost(req, res) {
 
         }
 
-        const updatePost=updatePostById(req.params.id,{
-            title,
-            body,
-            category,
-            author,
-        });
-
-        if(!updatePost){
-            return res.status(404).json({
-                message:"Post not found"
+        const updatePost = updatePostById(req.params.id,
+            {
+                title,
+                body,
+                category,
+                author,
             });
+
+        if (!updatePost) {
+            return res.status(404).json({
+                message: "Post not found"
+            });
+            
         }
         res.json(updatePost);
-    }catch(error){
+    } catch (error) {
         res.status(500).json({
-            message:"Failed to update post"
+            message: "Failed to update post"
         });
     }
 }
