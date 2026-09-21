@@ -35,7 +35,7 @@ export function getPost(req, res) {
     } catch (error) {
 
         console.error(error);
-        
+
         res.status(500).json({
             message: "Failed to fetch post",
         })
@@ -56,11 +56,15 @@ export function addPost(req, res) {
         const newPost = createPost({
             title,
             body,
-            category, author
+            category,
+             author,
         });
 
         res.status(201).json(newPost);
     } catch (error) {
+
+        console.error(error);
+        
         res.status(500).json({
             message: "Failed to create post",
         })
