@@ -66,5 +66,7 @@ export async function getPost(id) {
 
     if(!response.ok){
         throw new Error("failed to fetch post");
+
     }
+    return response.json();
 }
