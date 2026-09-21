@@ -5,11 +5,15 @@ import {
     updatePostById,
     deletePostByid,
 } from "../services/postServices.js";
+
 export function getPosts(req, res) {
     try {
         const posts = getAllPosts();
+
         res.json(posts);
     } catch (error) {
+        console.error(error);
+
         res.status(500).json({
 
             message: "Failed to fetch posts",
@@ -29,6 +33,9 @@ export function getPost(req, res) {
 
         res.json(post);
     } catch (error) {
+
+        console.error(error);
+        
         res.status(500).json({
             message: "Failed to fetch post",
         })
