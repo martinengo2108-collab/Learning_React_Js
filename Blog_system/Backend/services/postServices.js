@@ -1,72 +1,103 @@
-const API_URL = "http://localhost:5000/api/posts";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-export async function getPosts() {
-    const response = await fetch(API_URL);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-    if (!response.ok) {
+const DATA_FILE = path.join(__dirname, "../data/posts.json");
 
-        throw new Error("Failed to fetch posts");
-    }
 
-    return response.json();
+function readPosts() {
+    const data = fs.readFileSync(DATA_FILE, "utf-8");
+
+    return JSON.parse(data);
 }
 
-export async function createPost(postData) {
-    const response = await fetch(API_URL, {
-        method: "POST",
 
-        headers: {
-
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify(postData)
-    });
-    if (!response.ok) {
-        throw new Error("Failed to create post");
-    }
-    return response.json();
+function savePosts(posts) {
+    fs.writeFileSync(
+        DATA_FILE,
+        JSON.stringify(posts, null, 2)
+    );
 }
 
-export async function updatePost(id, postData) {
 
-    const response = await fetch(`${API_URL}/${id}`, {
-
-        method: "PUT",
-
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postData)
-    });
-
-    if (!response.ok) {
-        throw new Error("Failed to update post");
-    }
-    return response.json();
-
+export function getAllPosts() {
+    return readPosts();
 }
 
-export async function deletePost(id) {
 
-    const response = await fetch(`${API_URL}/${id}`, {
+export function getPostById(id) {
+    const posts = readPosts();
 
-        method: "DELETE",
-    });
-
-    if (!response.ok) {
-        throw new Error("Failed to delete post")
-    }
-
-    return response.json();
+    return posts.find(post => post.id === Number(id));
 }
 
-export async function getPost(id) {
 
-    const response = await fetch(`${API_URL}/${id}`);
+export function createPost(postData) {
+    const posts = readPosts();
 
-    if(!response.ok){
-        throw new Error("failed to fetch post");
+    const newPost = {
+        id: posts.length > 0
+            ? posts[posts.length - 1].id + 1
+            : 1,
 
+        title: postData.title,
+        body: postData.body,
+        category: postData.category,
+        author: postData.author,
+    };
+
+    posts.push(newPost);
+
+    savePosts(posts);
+
+    return newPost;
+}
+
+
+export function updatePostById(id, postData) {
+    const posts = readPosts();
+
+    const index = posts.findIndex(
+        post => post.id === Number(id)
+    );
+
+    if (index === -1) {
+        return null;
     }
-    return response.json();
+
+    posts[index] = {
+        ...posts[index],
+        title: postData.title,
+        body: postData.body,
+        category: postData.category,
+        author: postData.author,
+    };
+
+    savePosts(posts);
+
+    return posts[index];
+}
+
+
+export function deletePostByid(id) {
+    const posts = readPosts();
+
+    const index = posts.findIndex(
+        post => post.id === Number(id)
+    );
+
+    if (index === -1) {
+        return null;
+    }
+
+    const deletedPost = posts[index];
+
+    posts.splice(index, 1);
+
+    savePosts(posts);
+
+    return deletedPost;
 }
