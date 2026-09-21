@@ -62,5 +62,9 @@ export async function deletePost(id) {
 
 export async function getPost(id) {
 
-    const response = await fetch(`${API_URL}/${id}`)
+    const response = await fetch(`${API_URL}/${id}`);
+
+    if(!response.ok){
+        throw new Error("failed to fetch post");
+    }
 }
