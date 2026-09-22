@@ -7,14 +7,16 @@ function PostForm({
     onSubmit,
     submitText = "Publish story"
 }) {
-    const [ title, setTitle ] = useState(initialData.title || "");
+    const [title, setTitle] = useState(initialData.title || "");
 
-    const [ body, setBody ] = useState(initialData.body || "");
+    const [body, setBody] = useState(initialData.body || "");
 
     const [category, setCategory] = useState(
         initialData.category || "Academics"
     );
-    const [error, setError] = useState("");
+    const [author, setAuthor] = useState(
+        initialData.author || ""
+    );
 
     useEffect(() => {
 
@@ -41,10 +43,10 @@ function PostForm({
             userId: initialData.userId || 1,
         });
     };
-    return(
+    return (
         <form className="post-form"
-        onSubmit={handleSubmit}>
-            {error&&(
+            onSubmit={handleSubmit}>
+            {error && (
                 <div className="form-error">
                     {error}
                 </div>
@@ -53,10 +55,10 @@ function PostForm({
                 <label htmlFor="category">
                     Category
                 </label>
-                <select 
-                id="category"
-                value={category}
-                onChange={(e)=>setCategory(e.target.value)}>
+                <select
+                    id="category"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}>
                     <option value="Academics">Academics</option>
                     <option value="Campus Life" >Campus Life</option>
                     <option value="Technology">Technology</option>
@@ -67,31 +69,31 @@ function PostForm({
 
             </div>
 
-             <div className="form-group">
+            <div className="form-group">
                 <label htmlFor="title">
                     Story title
                 </label>
                 <input
-                id="title"
-                type="text"
-                placeholder="Give your story a title...."
-                value={title}
-                onChange={(e)=>setTitle(e.target.value)} />
+                    id="title"
+                    type="text"
+                    placeholder="Give your story a title...."
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)} />
             </div>
             <div className="form-group">
                 <label htmlFor="body">
                     Your experience
                 </label>
                 <textarea
-                id="body"
-                rows="10"
-                placeholder="Tell us about the journey...."
-                value={body}
-                onChange={(e)=>setBody(e.target.value)} />
+                    id="body"
+                    rows="10"
+                    placeholder="Tell us about the journey...."
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)} />
             </div>
             <button
-            type="submit"
-            className="submit-post">
+                type="submit"
+                className="submit-post">
                 {submitText} →
             </button>
         </form>
