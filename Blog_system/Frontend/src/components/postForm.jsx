@@ -18,13 +18,13 @@ function PostForm({
         initialData.author || ""
     );
 
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
         onSubmit({
             title,
-            body ,
+            body,
             category,
             author,
         });
@@ -32,26 +32,34 @@ function PostForm({
     return (
         <form className="post-form"
             onSubmit={handleSubmit}>
-            
+
             <div className="form-group">
                 <label htmlFor="author">
                     Your name
                 </label>
-
-                
-                <select
-                    id="category"
-                    value={category}
-                    onChange={(event) => setCategory(event.target.value)}>
-                    <option value="Academics">Academics</option>
-                    <option value="Campus Life" >Campus Life</option>
-                    <option value="Technology">Technology</option>
-                    <option value="Career">Career</option>
-                    <option value="Personal Growth">Personal Growth</option>
-                    <option value="Internship">Internship</option>
-                </select>
-
+                <input
+                    id="author"
+                    type="text"
+                    value={author}
+                    onChange={(event) => setTitle(event.target.value)}
+                    placeholder="Enter your name"
+                    required />
             </div>
+
+
+            <select
+                id="category"
+                value={category}
+                onChange={(event) => setCategory(event.target.value)}>
+                <option value="Academics">Academics</option>
+                <option value="Campus Life" >Campus Life</option>
+                <option value="Technology">Technology</option>
+                <option value="Career">Career</option>
+                <option value="Personal Growth">Personal Growth</option>
+                <option value="Internship">Internship</option>
+            </select>
+
+
 
             <div className="form-group">
                 <label htmlFor="title">
