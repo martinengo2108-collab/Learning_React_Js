@@ -97,4 +97,4 @@ function PostForm({
         </form>
     );
 }
-export default postForm;
+export default PostForm;
