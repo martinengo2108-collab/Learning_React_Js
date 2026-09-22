@@ -57,28 +57,28 @@ function PostForm({
                     value={title}
                     onChange={(event) => setTitle(event.target.value)}
                     required
-                     />
+                />
             </div>
 
             <div className="form-group">
-                
+                <select
+                    id="category"
+                    value={category}
+                    onChange={(event) => setCategory(event.target.value)}
+                    required>
+                    <option value="Academics">Academics</option>
+                    <option value="Campus Life" >Campus Life</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Career">Career</option>
+                    <option value="Personal Growth">Personal Growth</option>
+                    <option value="Internship">Internship</option>
+                </select>
+
             </div>
-            <select
-                id="category"
-                value={category}
-                onChange={(event) => setCategory(event.target.value)}
-                required>
-                <option value="Academics">Academics</option>
-                <option value="Campus Life" >Campus Life</option>
-                <option value="Technology">Technology</option>
-                <option value="Career">Career</option>
-                <option value="Personal Growth">Personal Growth</option>
-                <option value="Internship">Internship</option>
-            </select>
 
 
 
-            
+
             <div className="form-group">
                 <label htmlFor="body">
                     Your experience
