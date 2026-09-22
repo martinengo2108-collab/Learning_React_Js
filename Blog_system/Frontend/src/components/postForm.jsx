@@ -18,29 +18,15 @@ function PostForm({
         initialData.author || ""
     );
 
-    useEffect(() => {
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
 
-        setTitle(initialData.title || "");
-        setBody(initialData.body || "");
-        setCategory(initialData.category || "Academics");
-    }, [initialData]);
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-
-        if (!title.trim() || !body.trim()) {
-            setError("Please complete the title and story.");
-
-            return;
-        }
-        setError("");
         onSubmit({
-            title: title.trim(),
-
-            body: body.trim(),
+            title,
+            body ,
             category,
-            userId: initialData.userId || 1,
+            author,
         });
     };
     return (
