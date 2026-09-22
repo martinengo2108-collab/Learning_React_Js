@@ -46,6 +46,17 @@ function PostForm({
                     required />
             </div>
 
+            <div className="form-group">
+                <label htmlFor="title">
+                    Story title
+                </label>
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="Give your story a title...."
+                    value={title}
+                    onChange={(event) => setTitle(event.target.value)} />
+            </div>
 
             <select
                 id="category"
@@ -61,17 +72,7 @@ function PostForm({
 
 
 
-            <div className="form-group">
-                <label htmlFor="title">
-                    Story title
-                </label>
-                <input
-                    id="title"
-                    type="text"
-                    placeholder="Give your story a title...."
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)} />
-            </div>
+            
             <div className="form-group">
                 <label htmlFor="body">
                     Your experience
