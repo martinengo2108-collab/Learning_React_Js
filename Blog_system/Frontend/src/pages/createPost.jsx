@@ -37,7 +37,7 @@ function CreatePost() {
                 </h1>
 
                 <p>
-                    Your experiences could inpire another student.
+                    Your experiences could inspire another student.
                 </p>
             </div>
             <PostForm
