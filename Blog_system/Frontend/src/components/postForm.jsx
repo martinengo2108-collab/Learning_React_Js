@@ -88,15 +88,15 @@ function PostForm({
                 </label>
                 <textarea
                     id="body"
-                    rows="10"
+                    rows="9"
                     placeholder="Tell us about the journey...."
                     value={body}
-                    onChange={(e) => setBody(e.target.value)}
+                    onChange={(event) => setBody(event.target.value)}
                     required />
             </div>
             <button
                 type="submit"
-                className="submit-post">
+                >
                 {submitText} →
             </button>
         </form>
