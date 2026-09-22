@@ -60,6 +60,9 @@ function PostForm({
                      />
             </div>
 
+            <div className="form-group">
+                
+            </div>
             <select
                 id="category"
                 value={category}
