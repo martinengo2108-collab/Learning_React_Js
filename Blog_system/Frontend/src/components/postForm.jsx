@@ -32,19 +32,17 @@ function PostForm({
     return (
         <form className="post-form"
             onSubmit={handleSubmit}>
-            {error && (
-                <div className="form-error">
-                    {error}
-                </div>
-            )}
+            
             <div className="form-group">
-                <label htmlFor="category">
-                    Category
+                <label htmlFor="author">
+                    Your name
                 </label>
+
+                
                 <select
                     id="category"
                     value={category}
-                    onChange={(e) => setCategory(e.target.value)}>
+                    onChange={(event) => setCategory(event.target.value)}>
                     <option value="Academics">Academics</option>
                     <option value="Campus Life" >Campus Life</option>
                     <option value="Technology">Technology</option>
