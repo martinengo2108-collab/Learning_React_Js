@@ -41,7 +41,7 @@ export const Contact = () => {
                             <input type="text"
                                 id="name"
                                 name="name"
-                                required 
+                                required
                                 value={formData.name}
                                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 "
                                 placeholder="Name" />
@@ -51,7 +51,9 @@ export const Contact = () => {
                             <input type="email"
                                 id="email"
                                 name="email"
-                                required className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 "
+                                value={formData.email}
+                                required
+                                className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 "
                                 placeholder="name@gmail.com" />
 
                         </div>
@@ -59,9 +61,11 @@ export const Contact = () => {
                             <textarea
                                 id="message"
                                 name="message"
+                                value={formData.message}
                                 required
                                 rows={5} className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5 "
-                                placeholder="Your message" />
+                                placeholder="Your message"
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
 
                         </div>
                         <button
