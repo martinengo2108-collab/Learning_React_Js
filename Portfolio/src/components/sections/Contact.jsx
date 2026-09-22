@@ -5,9 +5,12 @@ import emailjs from "emailjs-com";
 
 export const Contact = () => {
 
-    const handleSubmit=(e)=>{
+    const SERVICE_ID = "service_diqweqi"
+
+    const handleSubmit = (e) => {
         e.preventDefault()
-        
+
+        emailjs.sendForm()
     }
     return (
         <section id="contacts"
@@ -38,7 +41,7 @@ export const Contact = () => {
 
                         </div>
                         <div className="relative">
-                            <textarea 
+                            <textarea
                                 id="message"
                                 name="message"
                                 required
@@ -47,11 +50,11 @@ export const Contact = () => {
 
                         </div>
                         <button
-                        type="submit"
-                        className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative
+                            type="submit"
+                            className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative
                          overflow-hidden hover:-translate-y-0.5 hover:shadoww-[0_0_15px_rgba(59,130,246,0.4)]">
                             Send Message
-                         </button>
+                        </button>
 
                     </form>
                 </div>
