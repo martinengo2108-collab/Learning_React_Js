@@ -5,12 +5,16 @@ import emailjs from "emailjs-com";
 
 export const Contact = () => {
 
-    const SERVICE_ID = "service_diqweqi"
+    const SERVICE_ID = "service_diqweqi";
+
+    const TEMPLATE_ID="template_bvw2rsj"
+
+    const PUBLIC_KEY="E3tE4M3PG5icnrXQz"
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        emailjs.sendForm()
+        emailjs.sendForm(SERVICE_ID,TEMPLATE_ID,e.target)
     }
     return (
         <section id="contacts"
