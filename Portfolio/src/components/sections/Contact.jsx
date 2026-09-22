@@ -1,5 +1,7 @@
-import RevealOnScroll from "../RevealOnScroll"
+import RevealOnScroll from "../RevealOnScroll";
 
+
+import emailjs from "emailjs-com";
 
 export const Contact = () => {
     return (
