@@ -55,13 +55,16 @@ function PostForm({
                     type="text"
                     placeholder="Give your story a title...."
                     value={title}
-                    onChange={(event) => setTitle(event.target.value)} />
+                    onChange={(event) => setTitle(event.target.value)}
+                    required
+                     />
             </div>
 
             <select
                 id="category"
                 value={category}
-                onChange={(event) => setCategory(event.target.value)}>
+                onChange={(event) => setCategory(event.target.value)}
+                required>
                 <option value="Academics">Academics</option>
                 <option value="Campus Life" >Campus Life</option>
                 <option value="Technology">Technology</option>
@@ -82,7 +85,8 @@ function PostForm({
                     rows="10"
                     placeholder="Tell us about the journey...."
                     value={body}
-                    onChange={(e) => setBody(e.target.value)} />
+                    onChange={(e) => setBody(e.target.value)}
+                    required />
             </div>
             <button
                 type="submit"
