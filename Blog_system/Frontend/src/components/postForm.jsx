@@ -66,8 +66,20 @@ function PostForm({
                 </select>
 
             </div>
+
+             <div className="form-group">
+                <label htmlFor="title">
+                    Story title
+                </label>
+                <input
+                id="title"
+                rows="10"
+                placeholder="Tell us about the journey...."
+                value={body}
+                onChange={(e)=>setBody(e.target.value)} />
+            </div>
             <div className="form-group">
-                <label>
+                <label htmlFor="body">
                     Your experience
                 </label>
                 <textarea
