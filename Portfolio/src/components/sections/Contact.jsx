@@ -14,7 +14,9 @@ export const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        emailjs.sendForm(SERVICE_ID,TEMPLATE_ID,e.target)
+        emailjs.sendForm(SERVICE_ID,TEMPLATE_ID,e.target,PUBLIC_KEY).then((result)=>{
+            alert("Message Sent!")
+        })
     }
     return (
         <section id="contacts"
