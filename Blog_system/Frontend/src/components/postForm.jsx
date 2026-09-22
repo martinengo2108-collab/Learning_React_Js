@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function postForm({
+function PostForm({
 
     initialData = {},
 
@@ -50,18 +50,19 @@ function postForm({
                 </div>
             )}
             <div className="form-group">
-                <label>
+                <label htmlFor="category">
                     Category
                 </label>
                 <select 
+                id="category"
                 value={category}
                 onChange={(e)=>setCategory(e.target.value)}>
-                    <option >Academics</option>
-                    <option >Campus Life</option>
-                    <option>Technology</option>
-                    <option >Career</option>
-                    <option >Personal Growth</option>
-                    <option>Internship</option>
+                    <option value="Academics">Academics</option>
+                    <option value="Campus Life" >Campus Life</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Career">Career</option>
+                    <option value="Personal Growth">Personal Growth</option>
+                    <option value="Internship">Internship</option>
                 </select>
 
             </div>
