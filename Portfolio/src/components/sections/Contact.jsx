@@ -4,6 +4,11 @@ import RevealOnScroll from "../RevealOnScroll";
 import emailjs from "emailjs-com";
 
 export const Contact = () => {
+
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        
+    }
     return (
         <section id="contacts"
             className="min-h-screen flex items-center justify-center py-20">
