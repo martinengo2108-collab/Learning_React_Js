@@ -42,7 +42,7 @@ export const Contact = () => {
                         {" "}
                         Get In Touch{" "}
                     </h2>
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="relative">
                             <input type="text"
                                 id="name"
