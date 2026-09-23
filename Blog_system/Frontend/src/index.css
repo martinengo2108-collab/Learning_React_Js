@@ -400,6 +400,10 @@ select {
   border: none;
   background-color: #2563eb;
   color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 .post-card-footer {
   border-top: 1px solid var(--border);
