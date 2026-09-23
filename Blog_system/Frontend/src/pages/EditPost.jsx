@@ -12,60 +12,61 @@ import {
 function EditPost() {
     const { id } = useParams();
 
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
-    const[post,setPost]=useState(null);
+    const [post, setPost] = useState(null);
 
-    const [loading,setLoading]=useState(true);
+    const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
+    useEffect(() => {
         async function loadPost() {
 
-            try{
-                const data=await getPost(id);
+            try {
+                const data = await getPost(id);
 
                 setPost(data);
-            }catch(error){
+            } catch (error) {
 
                 console.error("Unable to load story:", error);
-                
+
                 alert("Unable to load this story.");
-            }finally{
+            } finally {
                 setLoading(false);
             }
-            
+
         }
 
         loadPost()
-    },[id]);
+    }, [id]);
 
-    const handleUpdate=async (updatedPost)=>{
-        try{
-            const data=await updatePost(id,updatedPost);
+    const handleUpdate = async (updatedPost) => {
+        try {
+            const data = await updatePost(id, updatedPost);
 
             navigate(`/posts/${data.id}`);
-        }catch{
+        } catch (error) {
+            console.error("Unable to update story:", error)
             alert("Unable to updatee this story.");
         }
     };
-    if(loading){
+    if (loading) {
         return
         <p>
-            Loading story
+            Loading story...
         </p>
     }
-    if(!post){
-        return  
+    if (!post) {
+        return
         <p>Story not found.</p>
     }
 
-    return(
+    return (
 
         <main
-        className="form-page">
+            className="form-page">
             <div className="form-header">
                 <span
-                className="section-label">
+                    className="section-label">
                     EDIT STORY
                 </span>
                 <h1>
@@ -77,7 +78,10 @@ function EditPost() {
                 </p>
             </div>
             <PostForm
-            
+                initialData={post}
+                onSubmit={handleUpdate}
+                submitText="Update story"
+
             />
         </main>
     );
