@@ -27,8 +27,9 @@ function EditPost() {
                 setPost(data);
             }catch(error){
 
-                console.error("Unable to load story:", error)
-                alert("Unable to load this story.")
+                console.error("Unable to load story:", error);
+                
+                alert("Unable to load this story.");
             }finally{
                 setLoading(false);
             }
