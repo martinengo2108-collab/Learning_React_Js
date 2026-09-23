@@ -420,7 +420,6 @@ select {
 .post-card-footer {
   border-top: 1px solid var(--border);
   padding-top: 15px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
