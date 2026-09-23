@@ -41,7 +41,7 @@ function PostForm({
                     id="author"
                     type="text"
                     value={author}
-                    onChange={(event) => setTitle(event.target.value)}
+                    onChange={(event) => setAuthor(event.target.value)}
                     placeholder="Enter your name"
                     required />
             </div>
