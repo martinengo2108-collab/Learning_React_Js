@@ -100,8 +100,6 @@ select {
   background: var(--primary-dark);
 }
 
-/* HERO */
-
 .hero {
   max-width: 1200px;
   margin: auto;
@@ -164,7 +162,6 @@ select {
   font-weight: 600;
 }
 
-/* HERO VISUAL */
 
 .hero-decoration {
   position: relative;
@@ -212,15 +209,12 @@ select {
   left: 65px;
 }
 
-/* MAIN */
-
 .home-main {
   max-width: 1200px;
   margin: auto;
   padding: 20px 24px 80px;
 }
 
-/* FEATURED */
 
 .featured-post {
   background: var(--dark);
@@ -272,8 +266,6 @@ select {
   color: var(--secondary);
 }
 
-/* DISCOVER */
-
 .section-heading {
   display: flex;
   justify-content: space-between;
@@ -288,7 +280,6 @@ select {
   margin-top: 7px;
 }
 
-/* SEARCH */
 
 .search-container {
   position: relative;
@@ -324,7 +315,6 @@ select {
   cursor: pointer;
 }
 
-/* CATEGORY */
 
 .category-wrapper {
   overflow-x: auto;
@@ -353,7 +343,6 @@ select {
   border-color: var(--primary);
 }
 
-/* POSTS */
 
 .post-grid {
   display: grid;
@@ -406,7 +395,12 @@ select {
   font-size: 0.92rem;
   margin-bottom: 22px;
 }
-
+.post-form button{
+  padding: 12px 24px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+}
 .post-card-footer {
   border-top: 1px solid var(--border);
   padding-top: 15px;
