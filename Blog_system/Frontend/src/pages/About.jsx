@@ -6,7 +6,7 @@ function About() {
             <section className="about-hero">
                 <span
                     className="section-label">
-                    ABOUT StudentSphere
+                    About StudentSphere
                 </span>
                 <h1>
                     Every students has a story worth sharing.
