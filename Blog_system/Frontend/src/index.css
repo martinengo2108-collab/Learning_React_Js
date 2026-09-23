@@ -405,6 +405,10 @@ select {
   cursor: pointer;
   transition: 0.2s ease;
 }
+.post-form button:hover{
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
 .post-card-footer {
   border-top: 1px solid var(--border);
   padding-top: 15px;
