@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 2,
+    "title": "My first internship day",
+    "body": "It usually begins with doubts and confusion.\n",
+    "category": "Internship",
+    "author": "Martine Ngo Boumkwo"
+  }
+]

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { data, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import PostForm from "../components/postForm";
-import { createPost } from "../services/postservice";
 import {
     getPost,
     updatePost,
@@ -26,8 +25,10 @@ function EditPost() {
                 const data=await getPost(id);
 
                 setPost(data);
-            }catch{
-                alert("Unable to load this story")
+            }catch(error){
+
+                console.error("Unable to load story:", error)
+                alert("Unable to load this story.")
             }finally{
                 setLoading(false);
             }
@@ -47,10 +48,13 @@ function EditPost() {
         }
     };
     if(loading){
-        return<Loading />
+        return
+        <p>
+            Loading story
+        </p>
     }
     if(!post){
-        return 
+        return  
         <p>Story not found.</p>
     }
 
