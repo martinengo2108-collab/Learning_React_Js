@@ -7,7 +7,15 @@ export function requireAdmin(req, res, next) {
     if (!authHeader || !authHeader.startsWith("Bearer")
     ) {
         return res.status(401).json({
-            
-        })
+            message: "Admin authentification required"
+        });
+    }
+
+    const token = authHeader.split(" ")[1];
+
+    try {
+        const decode = jwt.verify(
+
+        )
     }
 }
