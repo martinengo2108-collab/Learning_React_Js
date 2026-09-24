@@ -42,8 +42,20 @@ function AdminLogin() {
         } catch (error) {
             setError(
                 error.message || "Unable to log in."
-            )
+            );;
 
+        }finally{
+            setLoading(false);
         }
-    }
+    };
+    return(
+        <main
+        className="form-page">
+            <div className="form-header">
+                <span className="section-label">
+                    ADMINISTRATION
+                </span>
+            </div>
+        </main>
+    )
 }
