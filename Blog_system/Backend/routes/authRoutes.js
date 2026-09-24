@@ -19,8 +19,8 @@ router.post("/login", (req, res) => {
             role: "admin"
         }, process.env.JWT_SECRET,
         {
-
+            expiresIn: "2h"
         }
-    )
+    );
 
 })
