@@ -14,8 +14,13 @@ export function requireAdmin(req, res, next) {
     const token = authHeader.split(" ")[1];
 
     try {
-        const decode = jwt.verify(
+        const decoded = jwt.verify(
+            token,
+            process.env.JWT_SECRET
 
-        )
+        );
+        if (decoded.role !== "admin") {
+
+        }
     }
 }
