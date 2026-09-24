@@ -107,5 +107,7 @@ function AdminLogin() {
                 </button>
             </form>
         </main>
-    )
+    );
 }
+
+export default AdminLogin;
