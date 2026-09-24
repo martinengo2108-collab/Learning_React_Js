@@ -20,7 +20,15 @@ export function requireAdmin(req, res, next) {
 
         );
         if (decoded.role !== "admin") {
+            return res.status(403).json({
+                message: "Admin access denied",
+            });
 
         }
+        next();
+    }catch(error){
+        return res.status(401).json({
+            message:"Invalid or expired token",
+        });
     }
 }
