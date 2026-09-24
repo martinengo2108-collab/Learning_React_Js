@@ -29,7 +29,7 @@ function AdminLogin() {
             }
             );
             const data = await response.json();
-            if(!response.ok){
+            if (!response.ok) {
                 throw new Error(data.message);
             }
 
@@ -37,6 +37,13 @@ function AdminLogin() {
                 "adminToken",
                 data.token
             );
+
+            navigate("/");
+        } catch (error) {
+            setError(
+                error.message || "Unable to log in."
+            )
+
         }
     }
 }
