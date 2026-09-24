@@ -55,7 +55,22 @@ function AdminLogin() {
                 <span className="section-label">
                     ADMINISTRATION
                 </span>
+                <h1>
+                    Admin Login
+                </h1>
+                <p>
+                    Log in to manage the stories on your blog.
+                </p>
             </div>
+            <form className="post-form"
+            onSubmit={handleLogin}>
+
+                <div className="form-group">
+                    <label htmlFor="username">
+                        
+                    </label>
+                </div>
+            </form>
         </main>
     )
 }
