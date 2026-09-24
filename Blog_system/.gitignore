@@ -1,0 +1,15 @@
+#Environment variables and secrets
+
+Backend/.env
+Frontend/.env
+.env
+
+#Dependencies
+
+node_modules/
+
+#Build files
+
+dist/
+#Debug logs
+*.log
