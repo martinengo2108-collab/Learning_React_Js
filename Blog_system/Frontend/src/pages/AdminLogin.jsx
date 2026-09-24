@@ -67,8 +67,28 @@ function AdminLogin() {
 
                 <div className="form-group">
                     <label htmlFor="username">
-                        
+                        Username
                     </label>
+                    <input
+                    id="username"
+                    value={username}
+                     type="text"
+                     onChange={(event)=>
+                        setUsername(event.target.value)
+                     } required/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password">
+                        Password
+                    </label>
+                    <input 
+                    id="password"
+                    type="text"
+                    value={password}
+                    onChange={(event)=>
+                        setPassword(event.target.value)
+                    }
+                    required />
                 </div>
             </form>
         </main>
