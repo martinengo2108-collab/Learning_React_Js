@@ -26,6 +26,8 @@ router.post("/login", (req, res) => {
     res.json({
         message: "Admin login sucessful",
         token,
-    })
+    });
 
-})
+});
+
+export default router;
