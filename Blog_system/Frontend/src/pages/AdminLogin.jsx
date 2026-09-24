@@ -97,7 +97,14 @@ function AdminLogin() {
                             {error}
                     </p>
                 )}
-                
+                <button
+                className="submit-post"
+                type="submit"
+                disabled={loading}
+                >
+                    {loading?"Logging in...":"Log in"}
+
+                </button>
             </form>
         </main>
     )
