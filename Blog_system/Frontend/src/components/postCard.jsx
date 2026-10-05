@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 function postCard({ post, onDelete }) {
     const category = post.category || "Student Life";
+
+    const isAdmin = sessionStorage.getItem("adminToken");
+
     return (
         <article className="post-card">
 
@@ -22,7 +25,7 @@ function postCard({ post, onDelete }) {
             </p>
             <div className="post-card-footer">
                 <span className="author">
-                    By Student
+                    By {post.author || "Student"}
                 </span>
                 <div className="post-actions">
                     <Link to={`/posts/${post.id}`}
@@ -38,7 +41,7 @@ function postCard({ post, onDelete }) {
                             className="delete-button"
 
                             onClick={() => onDelete(post.id)}
-                            >
+                        >
                             Delete
                         </button>
                     )}
