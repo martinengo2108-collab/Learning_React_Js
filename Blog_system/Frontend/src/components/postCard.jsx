@@ -33,10 +33,12 @@ function postCard({ post, onDelete }) {
                         Read →
                     </Link>
                     <Link
-                        to={`/edit/${post.id}`} className="edit-link">
+                        to={`/edit/${post.id}`}
+                         className="edit-link">
+
                         Edit
                     </Link>
-                    {onDelete && sessionStorage.getItem("adminToken") && (
+                    {onDelete && isAdmin && (
                         <button
                             className="delete-button"
 
