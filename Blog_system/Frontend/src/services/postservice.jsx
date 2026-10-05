@@ -39,31 +39,31 @@ export async function createPost(post) {
 
 export async function updatePost(id, post) {
 
-    const response = await fetch(`${API_URL}/${id}`,{
-        method:"PUT",
-        headers:{
-            "Content-type":"application/json"
+    const response = await fetch(`${API_URL}/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-type": "application/json"
         },
-        body:JSON.stringify(post),
+        body: JSON.stringify(post),
 
     });
 
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error("failed to update post");
     }
     return response.json();
 }
 export async function deletePost(id) {
 
-    const token=sessionStorage.getItem("adminToken");
-    
-    const response=await fetch(`${API_URL}/${id}`,{
-        method:"DELETE",
+    const token = sessionStorage.getItem("adminToken");
+
+    const response = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
     });
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error("Failed to delete post");
     }
 
     return true;
-    
+
 }
