@@ -59,6 +59,9 @@ export async function deletePost(id) {
 
     const response = await fetch(`${API_URL}/${id}`, {
         method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
     });
     if (!response.ok) {
         throw new Error("Failed to delete post");
