@@ -54,6 +54,9 @@ export async function updatePost(id, post) {
     return response.json();
 }
 export async function deletePost(id) {
+
+    const token=sessionStorage.getItem("adminToken");
+    
     const response=await fetch(`${API_URL}/${id}`,{
         method:"DELETE",
     });
