@@ -20,7 +20,7 @@ function App() {
         <Route path="/create" element={<CreatePost />} />
         <Route path="/edit/:id" element={<EditPost />} />
         <Route path="/admin/login"
-        element={<AdminLogin/>}/>
+        element={<AdminLogin />}/>
         
       </Routes>
       <Footer />
