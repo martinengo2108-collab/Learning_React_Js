@@ -95,11 +95,12 @@ function Login() {
                     </label>
                     <input
                         id="password"
-                        type="text"
+                        type="password"
                         value={password}
                         onChange={(event) =>
                             setPassword(event.target.value)
                         }
+                        placeholder="Enter your password"
                         required />
                 </div>
                 {error && (
@@ -118,6 +119,10 @@ function Login() {
 
                 </button>
             </form>
+            <p>
+                Don't have an account?{" "}
+                
+            </p>
         </main>
     );
 }
