@@ -21,3 +21,10 @@ function saveUsers(users) {
     );
 
 }
+
+export function findUserUsername(username) {    
+    const users = readUsers();
+    
+    return users.find(
+        user => user.username === username);
+}
