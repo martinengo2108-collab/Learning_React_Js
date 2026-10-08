@@ -16,23 +16,25 @@ function readUsers() {
 }
 function saveUsers(users) {
     fs.writeFileSync
-    (DATA_FILE, 
-        JSON.stringify(users, null, 2)
-    );
+        (DATA_FILE,
+            JSON.stringify(users, null, 2)
+        );
 
 }
 
-export function findUserUsername(username) {    
+export function findUserUsername(username) {
     const users = readUsers();
-    
+
     return users.find(
         user => user.username === username);
 }
 
-export function createUser(username,password) {
-    const users = readUsers();  
+export function createUser(username, password) {
+    const users = readUsers();
 
     const newUser = {
-        
+        id: users.length > 0
+            ? users[users.length - 1].id + 1
+            : 1,
     }
 }
