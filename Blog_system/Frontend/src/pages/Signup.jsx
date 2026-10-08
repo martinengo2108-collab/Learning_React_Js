@@ -72,6 +72,13 @@ function Signup() {
                     />
 
                 </div>
+                <div className="form-group">
+                    <label htmlFor="confirmPassword"> 
+                        Confirm Password
+                    </label>
+                    
+                         
+                </div>
 
             </form>
         </main>
