@@ -26,6 +26,16 @@ function Signup() {
         console.log({
             username,
             password,
-        })
-    }
+        });
+    };
+    return (
+    <main className="form-page">
+        <div className="form-header">
+            <span className="section-label">
+                JOIN THE COMMUNITY
+            </span>
+        </div>
+    </main>
+
+    )
 }
