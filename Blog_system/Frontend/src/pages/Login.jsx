@@ -121,7 +121,10 @@ function Login() {
             </form>
             <p>
                 Don't have an account?{" "}
-                
+
+                <button>
+                    Sign up
+                </button>
             </p>
         </main>
     );
