@@ -42,4 +42,7 @@ export function createUser(username, password) {
     };
     users.push(newUser);
     saveUsers(users);
+
+
+    return newUser;
 }
