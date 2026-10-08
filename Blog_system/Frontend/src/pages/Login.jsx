@@ -6,7 +6,7 @@ function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState("");
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
     const handleLogin = async (event) => {
@@ -17,16 +17,17 @@ function Login() {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/auth/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    username,
-                    password,
-                }),
-            }
+                "http://localhost:5000/api/auth/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        username,
+                        password,
+                    }),
+                }
             );
             const data = await response.json();
             if (!response.ok) {
@@ -94,15 +95,15 @@ function Login() {
                     <p
                         style={{ color: "red" }}>
 
-                            {error}
+                        {error}
                     </p>
                 )}
                 <button
-                className="submit-post"
-                type="submit"
-                disabled={loading}
+                    className="submit-post"
+                    type="submit"
+                    disabled={loading}
                 >
-                    {loading?"Logging in...":"Log in"}
+                    {loading ? "Logging in..." : "Log in"}
 
                 </button>
             </form>
