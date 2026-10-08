@@ -82,11 +82,16 @@ function Signup() {
                      value={confirmPassword}
                      onChange={(event) => setConfirmPassword(event.target.value)}
                      placeholder="Confirm your password"
-                     
-                      />
-                         
+                     required                    
+                      />                        
                 </div>
 
+                        {error && (
+                            <p style={{ color: "red" }}
+                            >
+                                {error}
+                            </p>
+                        )}
             </form>
         </main>
 
