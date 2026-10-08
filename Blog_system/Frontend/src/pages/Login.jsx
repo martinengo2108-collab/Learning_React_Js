@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AdminLogin() {
+function Login() {
     const navigate = useNavigate();
 
     const [username, setUsername] = useState("");
@@ -110,4 +110,4 @@ function AdminLogin() {
     );
 }
 
-export default AdminLogin;
+export default Login;
