@@ -21,7 +21,8 @@ function App() {
         <Route path="/create" element={<CreatePost />} />
         <Route path="/edit/:id" element={<EditPost />} />
         <Route path="/login" element={<Login />}/>
-        
+        <Route path="/signup" element={<Signup />} />
+          
       </Routes>
       <Footer />
     </>
