@@ -8,6 +8,9 @@ const __dirname = path.dirname(__filename);
 const DATA_FILE = path.join(__dirname, "../data/users.json");
 
 function readUsers(){
+    
     const data = fs.readFileSync(DATA_FILE, "utf-8");
+
     return JSON.parse(data);
+
 }
