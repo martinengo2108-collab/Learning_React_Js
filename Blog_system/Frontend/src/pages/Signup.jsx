@@ -48,6 +48,13 @@ function Signup() {
             <label htmlFor="username">
                 Username
             </label>
+            <input
+             type="text" 
+             id="username"
+             value={username}
+             onChange={(event) => setUsername(event.target.value)
+             }
+            />
             </div></form>
     </main>
 
