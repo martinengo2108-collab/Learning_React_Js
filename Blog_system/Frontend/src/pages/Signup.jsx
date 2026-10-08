@@ -22,5 +22,10 @@ function Signup() {
             setError("Password must be at least 6 characters long");
             return;
         }
+
+        console.log({
+            username,
+            password,
+        })
     }
 }
