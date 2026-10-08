@@ -29,7 +29,9 @@ function Login() {
                     }),
                 }
             );
+
             const data = await response.json();
+
             if (!response.ok) {
                 throw new Error(data.message);
             }
@@ -38,6 +40,10 @@ function Login() {
                 "adminToken",
                 data.token
             );
+            
+            if(data.token){
+                sessionStorage.setItem("")
+            }
 
             navigate("/");
         } catch (error) {
