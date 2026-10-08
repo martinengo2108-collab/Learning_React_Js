@@ -8,6 +8,7 @@ import About from "./pages/About";
 import PostDetails from "./pages/PostDetails";
 import CreatePost from "./pages/createPost";
 import EditPost from "./pages/EditPost";
+import  Signup from "./pages/Signup";
 function App() {
   return (
     <>
