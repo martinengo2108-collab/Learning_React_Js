@@ -12,5 +12,11 @@ function Signup() {
 
     const handleSignup = async (event) => {
         event.preventDefault();
+        setError("");
+
+        if (password !== confirmPassword) {
+            setError("Passwords do not match");
+            return;
+        }
     }
 }
