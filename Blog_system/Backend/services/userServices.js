@@ -28,3 +28,12 @@ export function findUserUsername(username) {
     return users.find(
         user => user.username === username);
 }
+
+export function createUser(username,password) {
+    const users = readUsers();  
+
+    const newUser = {
+
+        
+    }
+}
