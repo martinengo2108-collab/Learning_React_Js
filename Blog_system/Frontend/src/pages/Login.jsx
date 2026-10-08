@@ -68,8 +68,11 @@ function Login() {
                 <p>
                     Log in to continue to your account and access your personalized dashboard.
                 </p>
+
             </div>
-            <form className="post-form"
+
+            <form
+             className="post-form"
                 onSubmit={handleLogin}>
 
                 <div className="form-group">
@@ -82,7 +85,9 @@ function Login() {
                         type="text"
                         onChange={(event) =>
                             setUsername(event.target.value)
-                        } required />
+                        } 
+                        placeholder="Enter your username"
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">
