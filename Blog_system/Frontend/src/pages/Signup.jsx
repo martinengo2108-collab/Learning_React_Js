@@ -66,10 +66,14 @@ function Signup() {
                         id="password"
                         type="password"
                         value={password}
-                    >
+                        onChange={(event) => setPassword(event.target.value)}
+                        placeholder="Create a password"
+                        required
+                    />
 
-                    </input>
-                </div></form>
+                </div>
+
+            </form>
         </main>
 
     )
