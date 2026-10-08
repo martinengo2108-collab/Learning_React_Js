@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Signup() { 
+function Signup() {
     const navigate = useNavigate();
 
 
@@ -18,7 +18,7 @@ function Signup() {
             setError("Passwords do not match");
             return;
         }
-        if(password.length < 6){
+        if (password.length < 6) {
             setError("Password must be at least 6 characters long");
             return;
         }
@@ -29,34 +29,40 @@ function Signup() {
         });
     };
     return (
-    <main className="form-page">
-        <div className="form-header">
-            <span className="section-label">
-                JOIN THE COMMUNITY
-            </span>
-            <h1>
-                Create an Account
-            </h1>
-            <p>
-                Create an account to start sharing your experiences!
-            </p>
-        </div>
-        <form 
-        className="post-form"
-        onSubmit={handleSignup}>
-        <div className="form-group">
-            <label htmlFor="username">
-                Username
-            </label>
-            <input
-             type="text" 
-             id="username"
-             value={username}
-             onChange={(event) => setUsername(event.target.value)
-             }
-            />
-            </div></form>
-    </main>
+        <main className="form-page">
+            <div className="form-header">
+                <span className="section-label">
+                    JOIN THE COMMUNITY
+                </span>
+                <h1>
+                    Create an Account
+                </h1>
+                <p>
+                    Create an account to start sharing your experiences!
+                </p>
+            </div>
+            <form
+                className="post-form"
+                onSubmit={handleSignup}>
+                <div className="form-group">
+                    <label htmlFor="username">
+                        Username
+                    </label>
+                    <input
+                        type="text"
+                        id="username"
+                        value={username}
+                        onChange={(event) => setUsername(event.target.value)
+                        }
+                        placeholder="Enter your username"
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="password">
+                        Password
+                    </label></div></form>
+        </main>
 
     )
 }
