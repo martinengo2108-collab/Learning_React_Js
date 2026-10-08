@@ -33,7 +33,6 @@ export function createUser(username,password) {
     const users = readUsers();  
 
     const newUser = {
-
         
     }
 }
