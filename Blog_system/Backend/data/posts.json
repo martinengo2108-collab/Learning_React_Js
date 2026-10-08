@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "My first day in the university",
+    "body": "It was the first time for me to see so many student in a class.\nI almost cried. I was excited of the new milieu but afraid of what is coming ahead.",
+    "category": "Academics",
+    "author": "Martine Ngo Boumkwo"
+  }
+]
