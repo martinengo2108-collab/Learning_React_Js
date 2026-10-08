@@ -41,6 +41,10 @@ function Signup() {
                 Create an account to start sharing your experiences!
             </p>
         </div>
+        <form 
+        className="post-form"
+        onSubmit={handleSignup}>
+        </form>
     </main>
 
     )
