@@ -61,7 +61,15 @@ function Signup() {
                 <div className="form-group">
                     <label htmlFor="password">
                         Password
-                    </label></div></form>
+                    </label>
+                    <input
+                    id="password"
+                    type="password"
+                    value={password}
+                    >
+
+                    </input>
+                    </div></form>
         </main>
 
     )
