@@ -35,8 +35,11 @@ function Signup() {
                 JOIN THE COMMUNITY
             </span>
             <h1>
-                Create an account to start sharing your experiences!
+                Create an Account
             </h1>
+            <p>
+                Create an account to start sharing your experiences!
+            </p>
         </div>
     </main>
 
