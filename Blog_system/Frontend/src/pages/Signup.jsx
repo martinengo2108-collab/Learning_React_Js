@@ -76,7 +76,14 @@ function Signup() {
                     <label htmlFor="confirmPassword"> 
                         Confirm Password
                     </label>
-                    
+                    <input
+                    id="confirmPassword"
+                     type="text"
+                     value={confirmPassword}
+                     onChange={(event) => setConfirmPassword(event.target.value)}
+                     placeholder="Confirm your password"
+                     
+                      />
                          
                 </div>
 
