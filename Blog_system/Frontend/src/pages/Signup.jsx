@@ -9,4 +9,8 @@ function Signup() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
+
+    const handleSignup = async (event) => {
+        event.preventDefault();
+    }
 }
