@@ -36,5 +36,8 @@ export function createUser(username, password) {
         id: users.length > 0
             ? users[users.length - 1].id + 1
             : 1,
+            username,
+            password,   
+            role: "user"    
     }
 }
