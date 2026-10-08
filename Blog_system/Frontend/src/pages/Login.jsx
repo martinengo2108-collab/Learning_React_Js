@@ -40,9 +40,9 @@ function Login() {
                 "adminToken",
                 data.token
             );
-            
-            if(data.token){
-                sessionStorage.setItem("")
+
+            if(data.role){
+                sessionStorage.setItem("role",data.role);
             }
 
             navigate("/");
@@ -60,13 +60,13 @@ function Login() {
             className="form-page">
             <div className="form-header">
                 <span className="section-label">
-                    ADMINISTRATION
+                WELCOME BACK
                 </span>
                 <h1>
-                    Admin Login
+                    Log in
                 </h1>
                 <p>
-                    Log in to manage the stories on your blog.
+                    Log in to continue to your account and access your personalized dashboard.
                 </p>
             </div>
             <form className="post-form"
