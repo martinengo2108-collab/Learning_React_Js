@@ -39,5 +39,7 @@ export function createUser(username, password) {
             username,
             password,   
             role: "user"    
-    }
+    };
+    users.push(newUser);
+    saveUsers(users);
 }
