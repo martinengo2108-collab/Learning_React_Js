@@ -1,16 +1,23 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";   
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DATA_FILE = path.join(__dirname, "../data/users.json");
 
-function readUsers(){
-    
+function readUsers() {
+
     const data = fs.readFileSync(DATA_FILE, "utf-8");
 
     return JSON.parse(data);
+
+}
+function saveUsers(users) {
+    fs.writeFileSync
+    (DATA_FILE, 
+        JSON.stringify(users, null, 2)
+    );
 
 }
