@@ -92,6 +92,12 @@ function Signup() {
                                 {error}
                             </p>
                         )}
+                        <button
+                        className="submit-post"
+                        type="submit"
+                        >
+                            Create Account  
+                        </button>
             </form>
         </main>
 
