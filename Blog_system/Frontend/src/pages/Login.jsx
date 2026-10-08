@@ -122,7 +122,10 @@ function Login() {
             <p>
                 Don't have an account?{" "}
 
-                <button>
+                <button
+                type="button"   
+                onClick={() => navigate("/signup")}
+                >
                     Sign up
                 </button>
             </p>
