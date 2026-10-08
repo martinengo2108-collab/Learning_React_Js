@@ -1,5 +1,5 @@
 import {  Routes, Route } from "react-router-dom";
-import AdminLogin from "./pages/AdminLogin";
+import Login from "./pages/Login";
 import NavBar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -19,7 +19,7 @@ function App() {
         <Route path="/posts/:id" element={<PostDetails />} />
         <Route path="/create" element={<CreatePost />} />
         <Route path="/edit/:id" element={<EditPost />} />
-        <Route path="/admin/login" element={<AdminLogin />}/>
+        <Route path="/login" element={<Login />}/>
         
       </Routes>
       <Footer />
