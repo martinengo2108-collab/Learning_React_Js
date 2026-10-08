@@ -63,13 +63,13 @@ function Signup() {
                         Password
                     </label>
                     <input
-                    id="password"
-                    type="password"
-                    value={password}
+                        id="password"
+                        type="password"
+                        value={password}
                     >
 
                     </input>
-                    </div></form>
+                </div></form>
         </main>
 
     )
