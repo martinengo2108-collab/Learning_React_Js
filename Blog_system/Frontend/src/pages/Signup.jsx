@@ -99,6 +99,17 @@ function Signup() {
                             Create Account  
                         </button>
             </form>
+            <p>
+                Already have an account? {" "}
+                <button
+                type="button"
+                onClick={() => navigate("/login")}
+                >
+
+                    Log in  
+                </button>
+                
+            </p>
         </main>
 
     )
