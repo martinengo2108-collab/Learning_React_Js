@@ -34,6 +34,9 @@ function Signup() {
             <span className="section-label">
                 JOIN THE COMMUNITY
             </span>
+            <h1>
+                Create an account to start sharing your experiences!
+            </h1>
         </div>
     </main>
 
