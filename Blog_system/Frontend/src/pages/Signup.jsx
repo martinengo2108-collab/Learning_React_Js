@@ -22,6 +22,17 @@ function Signup() {
             setError("Password must be at least 6 characters long");
             return;
         }
+        try {
+            const response = await fetch(
+                "http://localhost:5000/api/users/signup",
+                {
+                    method: "POST",
+                    headers:{
+                        "Content-Type":"application/json",
+                    },
+                }
+            )
+        }
 
         console.log({
             username,
@@ -73,42 +84,42 @@ function Signup() {
 
                 </div>
                 <div className="form-group">
-                    <label htmlFor="confirmPassword"> 
+                    <label htmlFor="confirmPassword">
                         Confirm Password
                     </label>
                     <input
-                    id="confirmPassword"
-                     type="text"
-                     value={confirmPassword}
-                     onChange={(event) => setConfirmPassword(event.target.value)}
-                     placeholder="Confirm your password"
-                     required                    
-                      />                        
+                        id="confirmPassword"
+                        type="text"
+                        value={confirmPassword}
+                        onChange={(event) => setConfirmPassword(event.target.value)}
+                        placeholder="Confirm your password"
+                        required
+                    />
                 </div>
 
-                        {error && (
-                            <p style={{ color: "red" }}
-                            >
-                                {error}
-                            </p>
-                        )}
-                        <button
-                        className="submit-post"
-                        type="submit"
-                        >
-                            Create Account  
-                        </button>
+                {error && (
+                    <p style={{ color: "red" }}
+                    >
+                        {error}
+                    </p>
+                )}
+                <button
+                    className="submit-post"
+                    type="submit"
+                >
+                    Create Account
+                </button>
             </form>
             <p>
                 Already have an account? {" "}
                 <button
-                type="button"
-                onClick={() => navigate("/login")}
+                    type="button"
+                    onClick={() => navigate("/login")}
                 >
 
-                    Log in  
+                    Log in
                 </button>
-                
+
             </p>
         </main>
 
