@@ -26,4 +26,9 @@ router.post("/signup", (req, res) => {
             message: "Username already exists."
         });
     }
+
+    const user=createUser(username, password);
+    const token = jwt.sign(
+        
+    )
 })
