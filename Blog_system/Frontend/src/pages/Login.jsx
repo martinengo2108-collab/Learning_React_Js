@@ -37,7 +37,7 @@ function Login() {
             }
 
             sessionStorage.setItem(
-                "adminToken",
+                "token",
                 data.token
             );
 
