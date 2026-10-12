@@ -15,4 +15,7 @@ router.post("/signup", (req, res) => {
             message: "Username and password are required"
         });
     }
+    if(password.length < 6) {
+        
+    }
 })

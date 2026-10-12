@@ -22,7 +22,7 @@ function saveUsers(users) {
 
 }
 
-export function findUserUsername(username) {
+export function findUserByUsername(username) {
     const users = readUsers();
 
     return users.find(
