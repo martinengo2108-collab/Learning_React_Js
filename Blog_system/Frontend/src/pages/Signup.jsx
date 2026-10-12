@@ -37,6 +37,9 @@ function Signup() {
                 }
             );
             const data = await response.json();
+            if (!response.ok) {
+                setError(data.message || "An error occurred during signup");
+            }
         }
 
         console.log({
