@@ -7,4 +7,9 @@ const router = express.Router();
 
 router.post("/signup", (req, res) => {
 
+    const{username,password} = req.body;
+
+    if(!username || !password) {
+        
+    }
 })
