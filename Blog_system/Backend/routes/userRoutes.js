@@ -39,8 +39,9 @@ router.post("/signup", (req, res) => {
             expiresIn: "1h"
 
         });
-        res.status(201).json({}
-            message:"Account has been created successfully.",
-        )
+    res.status(201).json({
+        message: "Account has been created successfully.",
+        token
+    })
 
 })
