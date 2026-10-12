@@ -27,8 +27,8 @@ function Signup() {
                 "http://localhost:5000/api/users/signup",
                 {
                     method: "POST",
-                    headers:{
-                        "Content-Type":"application/json",
+                    headers: {
+                        "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
                         username,
@@ -40,6 +40,10 @@ function Signup() {
             if (!response.ok) {
                 setError(data.message || "An error occurred during signup");
             }
+            sessionStorage.setItem("token", data.token);
+            sessionStorage.setItem("role", data.role);
+            sessionStorage.setItem("username", data.username);
+            navigate("/");
         }
 
         console.log({
