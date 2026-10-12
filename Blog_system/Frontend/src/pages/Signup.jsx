@@ -51,7 +51,8 @@ function Signup() {
             )
         }
 
-        
+
+    };
     return (
         <main className="form-page">
             <div className="form-header">
