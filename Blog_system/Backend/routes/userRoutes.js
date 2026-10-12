@@ -47,3 +47,4 @@ router.post("/signup", (req, res) => {
     })
 
 })
+export default router;
