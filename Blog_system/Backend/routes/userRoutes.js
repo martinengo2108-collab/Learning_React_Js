@@ -27,8 +27,8 @@ router.post("/signup", (req, res) => {
         });
     }
 
-    const user=createUser(username, password);
+    const user = createUser(username, password);
     const token = jwt.sign(
-        
+
     )
 })
