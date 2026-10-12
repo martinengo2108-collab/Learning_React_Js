@@ -37,20 +37,21 @@ function Signup() {
                 }
             );
             const data = await response.json();
+
             if (!response.ok) {
-                setError(data.message || "An error occurred during signup");
+                throw new Error(data.message || "An error occurred during signup");
             }
             sessionStorage.setItem("token", data.token);
             sessionStorage.setItem("role", data.role);
             sessionStorage.setItem("username", data.username);
             navigate("/");
+        } catch (error) {
+            setError(
+                error.message || "Unable to create your account"
+            )
         }
 
-        console.log({
-            username,
-            password,
-        });
-    };
+        
     return (
         <main className="form-page">
             <div className="form-header">
