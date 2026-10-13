@@ -52,6 +52,8 @@ function Signup() {
             sessionStorage.setItem("username", data.username);
             navigate("/");
         } catch (error) {
+
+            console.error("Signup error:", error);
             setError(
                 error.message || "Unable to create your account"
             )
