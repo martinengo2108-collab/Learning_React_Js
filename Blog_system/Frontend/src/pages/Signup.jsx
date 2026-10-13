@@ -85,7 +85,8 @@ function Signup() {
                         type="text"
                         id="username"
                         value={username}
-                        onChange={(event) => setUsername(event.target.value)
+                        onChange={
+                            (event) => setUsername(event.target.value)
                         }
                         placeholder="Enter your username"
                         required
@@ -96,7 +97,7 @@ function Signup() {
                         Password
                     </label>
                     <input
-                        id="password"
+                        id="confirmPassword"
                         type="password"
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
