@@ -99,8 +99,8 @@ function Signup() {
                     <input
                         id="confirmPassword"
                         type="password"
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)}
+                        value={confirmPassword}
+                        onChange={(event) => setConfirmPassword(event.target.value)}
                         placeholder="Create a password"
                         required
                     />
