@@ -28,7 +28,7 @@ function Signup() {
 
             const response = await fetch(
                 "http://localhost:5000/api/users/signup",
-                
+
                 {
                     method: "POST",
                     headers: {
@@ -41,6 +41,8 @@ function Signup() {
                 }
             );
             const data = await response.json();
+            console.log("Response status:", response.status);
+            console.log("Backend response:", data);
 
             if (!response.ok) {
                 throw new Error(data.message || "An error occurred during signup");
